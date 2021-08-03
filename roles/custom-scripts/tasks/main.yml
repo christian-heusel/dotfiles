@@ -1,0 +1,16 @@
+---
+# tasks file for custom-scripts
+
+- name: create directory for the scripts
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, script_dir) | path_join }}"
+    state: directory
+    mode: '0755'
+
+- name: copy all the scripts into the script_dir
+  copy:
+    # the trailing slash ensures that all the folder content
+    # and not the folder itself is copied!
+    src: my_scripts/
+    dest: "{{ (ansible_user_dir, script_dir) | path_join }}"
+    mode: u+rx-w

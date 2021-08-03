@@ -11,7 +11,7 @@
   copy:
     src: "{{ nvim_config_file }}"
     dest: "{{ (ansible_user_dir, nvim_config_dir, nvim_config_file | basename ) | path_join }}"
-    mode: 0644
+    mode: u+r-wx
   with_first_found:
     - files:
         # allows for specific configs per host

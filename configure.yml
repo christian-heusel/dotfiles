@@ -2,4 +2,5 @@
 - hosts: 127.0.0.1
   connection: local
   roles:
-    - vim-configuration
+    - nvim-configuration
+    - custom-scripts
