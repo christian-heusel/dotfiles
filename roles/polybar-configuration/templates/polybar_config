@@ -19,7 +19,7 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/example]
-monitor = ${env:MONITOR:DP-0.1.8}
+monitor = ${env:MONITOR:{{ polybar_display_name }}}
 width = 100%
 height = 27
 ;offset-x = 1%
