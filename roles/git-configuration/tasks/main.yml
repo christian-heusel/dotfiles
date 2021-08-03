@@ -1,6 +1,6 @@
 ---
 # tasks file for git-configuration
-- name: copy the latexmkrc
+- name: copy the git files
   copy:
     # omit the "." in the src
     src: "{{ item }}"
