@@ -1,0 +1,21 @@
+---
+# tasks file for nvim-configuration
+
+- name: create the neovim conf dir
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, nvim_config_dir) | path_join }}"
+    state: directory
+    mode: '0755'
+
+- name: copy the neovim config file to the correct dir
+  copy:
+    src: "{{ nvim_config_file }}"
+    dest: "{{ (ansible_user_dir, nvim_config_dir, nvim_config_file | basename ) | path_join }}"
+    mode: 0644
+  with_first_found:
+    - files:
+        # allows for specific configs per host
+        - "init_{{ ansible_hostname }}.vim"
+        - "init.vim"
+  loop_control:
+    loop_var: nvim_config_file
