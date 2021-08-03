@@ -3,4 +3,5 @@
   connection: local
   roles:
     - nvim-configuration
+    - polybar-configuration
     - custom-scripts

@@ -1,0 +1,3 @@
+---
+# defaults file for polybar-configuration
+polybar_config_dir: ".config/polybar/"
