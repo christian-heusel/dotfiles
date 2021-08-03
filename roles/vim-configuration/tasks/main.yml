@@ -1,0 +1,5 @@
+---
+# tasks file for vim-configuration
+- name: test
+  debug:
+    msg: "{{ ansible_hostname }}"
