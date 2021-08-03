@@ -19,3 +19,9 @@
         - "init.vim"
   loop_control:
     loop_var: nvim_config_file
+
+- name: copy the latexmkrc
+  copy:
+    src: latexmkrc
+    dest: "{{ (ansible_user_dir, '.latexmkrc' ) | path_join }}"
+    mode: u+r-wx
