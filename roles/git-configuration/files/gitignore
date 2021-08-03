@@ -1,0 +1,7 @@
+Session.vim
+**/.vscode
+**/__pycache__
+**/build/
+**/release/
+**/debug/
+**/*.env

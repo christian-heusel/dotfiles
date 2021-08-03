@@ -1,0 +1,24 @@
+# This is Git's per-user configuration file.
+[user]
+    name = Christian Heusel
+    email = christian@heusel.eu
+    signkey = christian@heusel.eu
+[core]
+    editor = nvim
+    excludesFile = ~/.gitignore
+	quotePath = false
+	commitGraph = true
+[merge]
+    tool = nvim -d
+[gpg]
+    programm = gpg
+[commit]
+    gpgsign = true
+[pull]
+    rebase = true
+[init]
+	defaultBranch = main
+[receive]
+	advertisePushOptions = true
+[gc]
+	writeCommitGraph = true

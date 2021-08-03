@@ -1,0 +1,11 @@
+---
+# tasks file for git-configuration
+- name: copy the latexmkrc
+  copy:
+    # omit the "." in the src
+    src: "{{ item }}"
+    dest: "{{ (ansible_user_dir, '.' + item ) | path_join }}"
+    mode: u+r-wx
+  with_items:
+    - "gitignore"
+    - "gitconfig"

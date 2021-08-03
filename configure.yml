@@ -4,4 +4,5 @@
   roles:
     - nvim-configuration
     - polybar-configuration
+    - git-configuration
     - custom-scripts
