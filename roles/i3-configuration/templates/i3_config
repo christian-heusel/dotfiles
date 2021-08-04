@@ -144,10 +144,10 @@ font pango:System San Francisco Display 11
 ################### MENU ######################
 
 # start rofi
-bindsym $mod+d exec rofi -lines "4" -fake-transparency -show run -config "/home/chris/.config/rofi/rofi.conf"
+bindsym $mod+d exec rofi -lines "4" -fake-transparency -show run -config {{ (ansible_user_dir, i3_config_dir, 'rofi.conf') | path_join }}
 #bindsym $mod+d exec rofi -show run -config "/home/chris/.config/rofi/rofi_big.conf"
 # rofi ssh
-bindsym $mod+c exec rofi -lines "4" -terminal st -fake-transparency -show ssh -config "/home/chris/.config/rofi/rofi.conf"
+bindsym $mod+c exec rofi -lines "4" -terminal st -fake-transparency -show ssh -config {{ (ansible_user_dir, i3_config_dir, 'rofi.conf') | path_join }}
 
 # password selctor
 bindsym $mod+g exec {{ (ansible_user_dir, script_dir, "gopass_selector.sh") | path_join }}
