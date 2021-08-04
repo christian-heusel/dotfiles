@@ -29,5 +29,5 @@
 - name: copy the hugo script
   copy:
     src: serve-hugo-locally.sh
-    dest: "{{ (ansible_user_dir, 'serve-hugo-locally.sh' ) | path_join }}"
+    dest: "{{ (ansible_user_dir, nvim_config_dir, 'serve-hugo-locally.sh' ) | path_join }}"
     mode: u+rx-w
