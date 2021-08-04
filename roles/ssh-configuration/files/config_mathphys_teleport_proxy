@@ -1,0 +1,9 @@
+Host mathphysinfo-teleport-proxy
+    HostName apple.dmath.uni-heidelberg.de
+    Port 3023
+
+Host *.dmath.uni-heidelberg.de
+    HostName %h
+    Port 3022
+    User root
+    ProxyCommand ssh -p 3023 %r@mathphysinfo-teleport-proxy -s proxy:%h:%p

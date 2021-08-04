@@ -1,0 +1,9 @@
+Host mathi
+    Hostname shell.mathi.uni-heidelberg.de
+    User cheusel
+    IdentityFile ~/.ssh/cheusel@shell.mathi.uni-heidelberg.de
+    AddKeysToAgent yes
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+    PreferredAuthentications=keyboard-interactive,password
+    PubkeyAuthentication=no

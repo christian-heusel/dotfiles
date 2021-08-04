@@ -1,0 +1,3 @@
+---
+# defaults file for ssh-configuration
+ssh_config_dir: ".ssh/"

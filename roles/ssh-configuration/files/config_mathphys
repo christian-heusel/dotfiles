@@ -1,0 +1,38 @@
+Host mathphys
+    Hostname shell.mathphys.stura.uni-heidelberg.de
+    User chris
+    Port 22
+    IdentityFile /home/chris/Documents/Fachschaft/root/ssh-keys/chris_fachschaft
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+
+Host mathphys-nokey
+    Hostname shell.mathphys.stura.uni-heidelberg.de
+    User chris
+    Port 22
+    PreferredAuthentications=keyboard-interactive,password
+    PubkeyAuthentication=no
+    GSSAPIAuthentication yes
+    GSSAPIDelegateCredentials yes
+
+Host mathphys.old
+    Hostname fiddlehead.dmath.uni-heidelberg.de
+    User chris
+    Port 22
+    IdentityFile /home/chris/Documents/Fachschaft/root/ssh-keys/chris_fachschaft
+
+Host cherry.dmath.uni-heidelberg.de
+    HostName cherry.dmath.uni-heidelberg.de
+    User root
+    IdentityFile ~/.ssh/chris_fachschaft
+    AddKeysToAgent yes
+
+Host sven
+    Hostname sven.mathphys
+    User pi
+    IdentityFile /home/chris/.ssh/id_rsa
+
+Host sturaslides
+    Hostname openslides.stura.uni-heidelberg.de
+    User chris
+    IdentityFile /home/chris/.ssh/sitzungen.stura.uni-heidelberg.de

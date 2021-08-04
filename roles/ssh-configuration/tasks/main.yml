@@ -1,0 +1,17 @@
+---
+# tasks file for ssh-configuration
+- name: create the ssh conf dir
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, ssh_config_dir) | path_join }}"
+    state: directory
+    mode: '0700'
+
+- name: copy the ssh files
+  copy:
+    src: "{{ item }}"
+    dest: "{{ (ansible_user_dir, ssh_config_dir, item ) | path_join }}"
+    mode: u=r,g=,o=
+  with_items:
+    - "config"
+    - "config_mathphys"
+    - "config_mathphys_teleport_proxy"
