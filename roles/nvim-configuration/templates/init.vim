@@ -15,6 +15,8 @@
 nnoremap <space> za
 :set foldlevel=120
 
+source {{ (ansible_user_dir, nvim_config_dir, nvim_plugin_file) | path_join }}
+
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
     \   '-pdf',
@@ -56,12 +58,6 @@ nnoremap <C-W> <Esc>:bd <Enter> :<Esc>
 :set shell=/bin/zsh
 inoremap <C-J> <Esc>/<++><Enter>:noh<Enter>"_c4l
 let g:ycm_server_python_interpreter = 'python3'
-filetype off                   " required
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.config/nvim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'  " required
-Plugin 'rodjek/vim-puppet'  " required
 
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
@@ -80,13 +76,6 @@ let g:vimtex_compiler_latexmk = {
 :endfunction
 
 autocmd BufWritePost *.rmd exec "call CompileRmd()"
-" ===================
-" my plugins here
-" ===================
-
-Plugin 'tpope/vim-surround'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'ervandew/supertab'
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
@@ -104,11 +93,6 @@ let g:ale_linters = {
 \}
 let g:ale_fix_on_save = 1
 
-" Hardmode
-Plugin 'takac/vim-hardtime'
-" let it be always on
-" let g:hardtime_default_on = 1
-
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
@@ -119,22 +103,13 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
-Plugin 'jnurmine/Zenburn'
-Plugin 'dracula/vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'KeitaNakamura/neodark.vim'
-Plugin 'scrooloose/nerdtree'
 
 " Control + P
-Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 nnoremap <C-f> :NERDTreeToggle<CR>
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
@@ -146,16 +121,8 @@ set laststatus=2
 let g:airline_exclude_preview = 1
 
 " Track the engine.
-Plugin 'SirVer/ultisnips'
-Plugin 'pboettch/vim-cmake-syntax'
 " Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
-Plugin 'w0rp/ale'
-
 let g:ale_lint_on_text_changed = 'never'
-Plugin 'bash-support.vim'
-
-Plugin 'fatih/vim-go'
 let g:go_fmt_command = "goimports"    " Run goimports along gofmt on each save
 let g:go_auto_type_info = 1           " Automatically get signature/type info for object under cursor
 :augroup gogroup
@@ -169,25 +136,11 @@ let g:go_auto_type_info = 1           " Automatically get signature/type info fo
     :au FileType go nnoremap <leader>ll :GoMetaLinter<Enter>
 :augroup END
 
-" LaTeX
-Plugin 'lervag/vimtex'
 
-Plugin 'neovimhaskell/haskell-vim'
-Plugin 'jparise/vim-graphql'
-Plugin 'dart-lang/dart-vim-plugin'
-Plugin 'lepture/vim-jinja'
-
-" vim-obsession
-Plugin 'tpope/vim-obsession'
-Plugin 'tpope/vim-commentary'
 autocmd FileType cpp setlocal commentstring=//\ %s
 
-Plugin 'jiangmiao/auto-pairs'
 
 
-" vim-obsession
-Plugin 'xolox/vim-notes'
-Plugin 'xolox/vim-misc'
 :let g:notes_directories = ['~/ownCloud/Notes']
 
 
@@ -199,11 +152,6 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plugin 'junegunn/fzf.vim'
-Plugin 'stsewd/fzf-checkout.vim'
 
 " let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
@@ -213,18 +161,12 @@ nnoremap <leader>gd :G diff<Enter><Esc>
 nnoremap <leader>gp :G push<Enter><Esc>
 nnoremap <leader>gc :GCheckout<CR>
 
-Plugin 'junegunn/vim-emoji'
 autocmd FileType gitcommit set completefunc=emoji#complete
 autocmd FileType gitcommit set omnifunc=emoji#complete
 
 let g:ale_sign_column_always = 1
-Plugin 'https://github.com/triglav/vim-visual-increment.git'
 
 let python_highlight_all =1
-" ===================
-" end of plugins
-" ===================
-call vundle#end()               " required
 filetype plugin indent on       " required
 syntax on
 
@@ -268,3 +210,4 @@ let g:tex_flavor='latex'
 let g:vimtex_fold_enabled = 1
 let g:Tex_IgnoredWarnings = 'Overfull'."\n"
 let g:Tex_IgnoreLevel = 8
+

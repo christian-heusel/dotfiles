@@ -1,0 +1,18 @@
+filetype off                   " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+
+call vundle#begin()
+" ===================
+" my plugins here
+" ===================
+Plugin 'VundleVim/Vundle.vim'  " required
+
+{% for plugin in nvim_plugins %}
+Plugin '{{ plugin.name  }}'{{ ', ' + plugin.special_instruction if plugin.special_instruction | default(false)}}
+{% endfor %}
+
+" ===================
+" end of plugins
+" ===================
+call vundle#end()               " required

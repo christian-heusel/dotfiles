@@ -8,7 +8,7 @@
     mode: '0755'
 
 - name: copy the neovim config file to the correct dir
-  copy:
+  ansible.builtin.template:
     src: "{{ nvim_config_file }}"
     dest: "{{ (ansible_user_dir, nvim_config_dir, nvim_config_file | basename ) | path_join }}"
     mode: u+r-wx
@@ -19,6 +19,12 @@
         - "init.vim"
   loop_control:
     loop_var: nvim_config_file
+
+- name: create the neovim plugin file
+  ansible.builtin.template:
+    src: "plugins.j2"
+    dest: "{{ (ansible_user_dir, nvim_config_dir, nvim_plugin_file) | path_join }}"
+    mode: u+r-wx
   notify:
     - plugin_install
 
