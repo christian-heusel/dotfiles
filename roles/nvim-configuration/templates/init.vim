@@ -1,3 +1,10 @@
+filetype off                   " required for Vundle
+:set nocompatible              " required for Vundle
+" set the runtime path to include Vundle and initialize
+set rtp+={{ (ansible_user_dir, nvim_config_dir, 'bundle', 'Vundle.vim') | path_join }}
+" source the plugin file
+source {{ (ansible_user_dir, nvim_config_dir, nvim_plugin_file) | path_join }}
+
 :set tabstop=4
 :set shiftwidth=4
 :set expandtab
@@ -5,7 +12,6 @@
 :set number
 :set relativenumber
 :set clipboard=unnamedplus
-:set nocompatible
 :set nowrap
 :set fixendofline
 :let mapleader='ö'
@@ -14,8 +20,6 @@
 :set cursorline
 nnoremap <space> za
 :set foldlevel=120
-
-source {{ (ansible_user_dir, nvim_config_dir, nvim_plugin_file) | path_join }}
 
 let g:vimtex_compiler_latexmk = {
     \ 'options' : [
