@@ -97,7 +97,7 @@ bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 # bindsym $mod+Shift+r restart
-bindsym $mod+Shift+r exec --no-startup-id ~/.config/i3/my_scripts/reboot.sh
+bindsym $mod+Shift+r exec --no-startup-id {{ (ansible_user_dir, script_dir, "reboot.sh") | path_join }}
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec i3-msg exit
@@ -150,8 +150,8 @@ bindsym $mod+d exec rofi -lines "4" -fake-transparency -show run -config "/home/
 bindsym $mod+c exec rofi -lines "4" -terminal st -fake-transparency -show ssh -config "/home/chris/.config/rofi/rofi.conf"
 
 # password selctor
-bindsym $mod+g exec ~/.config/i3/my_scripts/gopass_selector.sh
-bindsym $mod+Shift+g exec ~/.config/i3/my_scripts/gopass_qr.sh
+bindsym $mod+g exec {{ (ansible_user_dir, script_dir, "gopass_selector.sh") | path_join }}
+bindsym $mod+Shift+g exec {{ (ansible_user_dir, script_dir, "gopass_qr.sh") | path_join }}
 
 ################### DUAL SCREEN ######################
 
@@ -299,24 +299,24 @@ bindsym Mod1+Ctrl+Left  workspace prev
 for_window [urgent=latest] focus
 
 # open up a new workspace
-bindsym $mod+n exec --no-startup-id ~/.config/i3/my_scripts/empty_workspace.sh
+bindsym $mod+n exec --no-startup-id {{ (ansible_user_dir, script_dir, "empty_workspace.sh") | path_join }}
 
 # move the current program to the next ws
 bindsym $mod+x move container to workspace next; workspace next
 
 # move the program to the (last+1) workspace
-bindsym $mod+Shift+n exec --no-startup-id ~/.config/i3/my_scripts/mtnp1.sh
+bindsym $mod+Shift+n exec --no-startup-id {{ (ansible_user_dir, script_dir, "mtnp1.sh") | path_join }}
 
 # lock screen
-bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/my_scripts/lockscreen.sh
+bindsym $mod+Shift+x exec --no-startup-id {{ (ansible_user_dir, script_dir, "lockscreen.sh") | path_join }}
 
 # shutdown computer
-bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/my_scripts/shutdown.sh
+bindsym $mod+Shift+s exec --no-startup-id {{ (ansible_user_dir, script_dir, "shutdown.sh") | path_join }}
 
 ################### SCREENSHOTS ######################
 
 
-bindsym Print exec --no-startup-id ~/.config/i3/my_scripts/scrot.sh
+bindsym Print exec --no-startup-id {{ (ansible_user_dir, script_dir, "scrot.sh") | path_join }}
 bindsym $mod+Print exec --no-startup-id shutter
 
 
@@ -380,8 +380,8 @@ bindsym mod1+f exec variety -f
 ################## Backlight ###################
 
 #script $1 states up,down or default; $2 defines how big the steps by $1{1,2} are
-bindsym XF86MonBrightnessUp   exec --no-startup-id /home/chris/.config/i3/my_scripts/xbacklight.sh 1 5
-bindsym XF86MonBrightnessDown exec --no-startup-id /home/chris/.config/i3/my_scripts/xbacklight.sh 2 5
+bindsym XF86MonBrightnessUp   exec --no-startup-id {{ (ansible_user_dir, script_dir, "xbacklight.sh") | path_join }} 1 5
+bindsym XF86MonBrightnessDown exec --no-startup-id {{ (ansible_user_dir, script_dir, "xbacklight.sh") | path_join }} 2 5
 
 
 ################### AUDIO ######################
@@ -403,7 +403,7 @@ bindsym XF86AudioStop exec playerctl stop
 ################### BAR ######################
 
 # bar toggle, hide or show
-bindsym $mod+b exec --no-startup-id /home/chris/.config/i3/my_scripts/toggle_polybar.sh
+bindsym $mod+b exec --no-startup-id {{ (ansible_user_dir, script_dir, "toggle_polybar.sh") | path_join }}
 
 
 ################### BORDER ######################
@@ -450,7 +450,7 @@ client.unfocused        #222222 #222222 #aaaaaa #222222
 client.focused_inactive #222222 #222222 #a9a9a9 #222222
 client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
 
-exec --no-startup-id ~/.config/polybar/polybar_launcher.sh
+exec --no-startup-id {{ (ansible_user_dir, polybar_config_dir, 'polybar_launcher.sh') | path_join }}
 
 ###########################################################################
 ###################       C O M P T O N      ##############################
@@ -508,7 +508,7 @@ exec seafile-applet
 # exec slack
 
 for_window [instance="TODOLISTTERMINAL"] floating enable, move position center, resize set 800 500;
-bindsym $mod+Shift+t exec --no-startup-id /home/chris/.config/i3/my_scripts/toggle_todo.sh
+bindsym $mod+Shift+t exec --no-startup-id {{ (ansible_user_dir, script_dir, "toggle_todo.sh") | path_join }}
 
 # network
 exec --no-startup-id nm-applet
