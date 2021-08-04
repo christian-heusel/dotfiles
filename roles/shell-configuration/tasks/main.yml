@@ -1,0 +1,30 @@
+---
+# tasks file for shell-configuration
+
+- name: set default shell
+  ansible.builtin.user:
+    name: "{{ ansible_user_id }}"
+    shell: "{{ default_shell }}"
+  become: yes
+
+- name: install oh-my-zsh
+  ansible.builtin.shell:
+    cmd: sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    creates: "{{ (ansible_user_dir, '.oh-my-zsh/') | path_join }}"
+
+- name: copy the shell configs
+  ansible.builtin.template:
+    src: "{{ item }}.j2"
+    dest: "{{ (ansible_user_dir, '.' + item) | path_join }}"
+    mode: u=r,g=,o=
+    backup: yes
+  with_items:
+    - "zshrc"
+    - "bashrc"
+
+- name: install the extra zsh plugins
+  ansible.builtin.git:
+    repo: "{{ item.git_url }}"
+    dest: "{{ (ansible_user_dir, '.oh-my-zsh/custom/plugins',  item.name ) | path_join }}"
+    update: false
+  with_items: "{{ extra_plugins }}"

@@ -24,4 +24,5 @@
   ansible.builtin.git:
     repo: "{{ item.git_url }}"
     dest: "{{ item.path }}"
+    update: false
   with_items: "{{ [default_store] + other_mounts }}"

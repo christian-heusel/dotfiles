@@ -1,0 +1,116 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+  export ZSH=/home/chris/.oh-my-zsh
+
+zstyle :omz:plugins:ssh-agent identities id_rsa theeboladoc@gitlab.com pvk19
+zstyle :omz:plugins:ssh-agent identities
+zstyle :omz:plugins:ssh-agent lifetime 3h
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="{{ zsh_theme }}"
+#ZSH_THEME="random"
+#ZSH_THEME="kafeitu"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(
+  git
+  ssh-agent
+{% for plugin in extra_plugins %}
+  {{ plugin.name }}
+{% endfor %}
+)
+
+source $ZSH/oh-my-zsh.sh
+
+# User configuration
+
+# Preferred editor for local and remote sessions
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
+alias cd..="cd .."
+alias la="ls -a"
+alias ll="ls -lah"
+alias snano="sudo nano"
+alias svim="sudo nvim"
+alias i3config="nvim ~/.config/i3/config"
+alias polybarconfig="nvim ~/.config/polybar/config"
+alias vimconfig="$EDITOR $HOME/.config/nvim/init.vim"
+alias todo="nvim ~/TODO.txt"
+alias vimcat="/home/chris/.config/i3/my_scripts/vimcat"
+alias g++="g++ -Wall -std=c++14 -pedantic"
+alias g++11="\g++ -Wall -pedantic -std=c++11"
+alias g++17="\g++ -Wall -pedantic -std=c++17"
+alias g++20="\g++ -Wall -pedantic -std=c++2a"
+alias sl="sl && clear"
+alias LS="sl && clear"
+alias git commit="git commit && clear"
+alias ssh-nokey="ssh -o PreferredAuthentications=keyboard-interactive,password -o PubkeyAuthentication=no"
+alias cmake-r="cmake -DCMAKE_BUILD_TYPE=Release"
+alias cmake-d="cmake -DCMAKE_BUILD_TYPE=Debug"
+alias cmake-n="/home/chris/.config/i3/my_scripts/new-cmake.py"
+alias r="ranger ."
+alias nv="nvim"
+alias ev="evince"
+alias tresor="ssh mathphys tresor"
+alias wakemeup="ssh root@grunthos wakemeup -p $(gopass show --password MathI/Databases/PostgreSQL/inventar) $@"
+alias mv="mv -v"
+alias cp="cp -v"
+alias rm="rm -v"
+alias mkdir="mkdir -v"
+alias pb="curl -F c=@- https://ptpb.pw/"
+alias black-bg="feh --bg-fill ~/random/DTvUQor.jpg"
+alias lif="~/.config/i3/my_scripts/lineinfile.sh"
+alias protokoll="~/.config/i3/my_scripts/protokoll.sh"
+alias vimdiff="nvim -d"
+alias gparted='gksu -u root -m "root authentication is required to use gparted" "gparted"'
+alias bat='batcat'
+alias flutter='/datapool/chris/Android/fluttr-sdk/flutter/bin/flutter'
+alias yapf='yapf3'
+alias spack_env='source /datapool/chris/Downloads/spack/share/spack/setup-env.sh'
+
+rm-tex() {
+    [ -x ./*.aux ] && rm ./*.aux
+    [ -x ./*.fdb_latexmk ] && rm ./*.fdb_latexmk
+    [ -x ./*.fls ] && rm ./*.fls
+    [ -x ./*.log ] && rm ./*.log
+    [ -x ./*.nav ] && rm ./*.nav
+    [ -x ./*.out ] && rm ./*.out
+    [ -x ./*.toc ] && rm ./*.toc
+    [ -x ./*.vrb ] && rm ./*.vrb
+    [ -x ./*.snm ] && rm ./*.snm
+}
+
+copy() {
+    cat $1 | xclip -selection clipboard
+}
+
+# color for zsh-autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
+export GPG_TTY=$(tty) 
+
+export PATH=$PATH:$HOME/.local/bin
+export ANSIBLE_NOCOWS=1

@@ -1,0 +1,7 @@
+---
+# defaults file for shell-configuration
+default_shell: "/usr/bin/zsh"
+zsh_theme: lukerandall
+extra_plugins:
+  - name: "zsh-autosuggestions"
+    git_url: "https://github.com/zsh-users/zsh-autosuggestions"

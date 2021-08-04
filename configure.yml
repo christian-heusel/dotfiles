@@ -8,4 +8,5 @@
     - ssh-configuration
     - gopass-configuration
     - i3-configuration
+    - shell-configuration
     - custom-scripts
