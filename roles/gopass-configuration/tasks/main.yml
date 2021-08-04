@@ -1,0 +1,27 @@
+---
+# tasks file for gopass-configuration
+
+- include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+        # allows for specific configs per host
+        - "{{ ansible_hostname }}.yml"
+      skip: true
+
+- name: create the gopass conf dir
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, gopass_config_dir) | path_join }}"
+    state: directory
+    mode: '0755'
+
+- name: copy the gopass config file to the correct dir
+  ansible.builtin.template:
+    src: "gopass_config.yml.j2"
+    dest: "{{ (ansible_user_dir, gopass_config_dir, 'config.yml') | path_join }}"
+    mode: u=r,g=,o=
+
+- name: clone the gopass stores
+  ansible.builtin.git:
+    repo: "{{ item.git_url }}"
+    dest: "{{ item.path }}"
+  with_items: "{{ [default_store] + other_mounts }}"

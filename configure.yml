@@ -6,5 +6,6 @@
     - polybar-configuration
     - git-configuration
     - ssh-configuration
+    - gopass-configuration
     - i3-configuration
     - custom-scripts

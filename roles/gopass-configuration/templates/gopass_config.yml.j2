@@ -1,0 +1,14 @@
+autoclip: true
+autoimport: true
+cliptimeout: 45
+exportkeys: false
+mime: true
+nocolor: false
+nopager: false
+notifications: true
+path: {{ default_store.path }}
+safecontent: false
+mounts:
+{% for mount in other_mounts %}
+  {{ mount.name }}: {{ mount.path }}
+{% endfor %}
