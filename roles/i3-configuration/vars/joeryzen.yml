@@ -1,0 +1,28 @@
+---
+i3_default_terminal: "terminator"
+i3_screen_config: |
+  # my current setup
+  set $firstMonitor DP-0.1.8
+  set $secondMonitor DP-0.8
+
+  # setting variables for later use
+  # use xrandr and/or arandr to know the names of your monitors
+  # use this line to tell which monitor is on the right
+  exec xrandr --output $firstMonitor --mode 2560x1440 --primary
+  exec xrandr --output $secondMonitor --mode 2560x1440 --right-of $firstMonitor
+  exec ~/.screenlayout/daheim_2_mon.sh
+
+  workspace 1 output  $firstMonitor
+  workspace 2 output  $firstMonitor
+  workspace 3 output  $firstMonitor
+  workspace 4 output  $firstMonitor
+  workspace 5 output  $firstMonitor
+  workspace 6 output  $secondMonitor
+  workspace 7 output  $secondMonitor
+  workspace 8 output  $secondMonitor
+  workspace 9 output  $secondMonitor
+  workspace 10 output $secondMonitor
+  workspace 11 output $secondMonitor
+  workspace 12 output $secondMonitor
+  workspace 13 output $secondMonitor
+  workspace 14 output $secondMonitor

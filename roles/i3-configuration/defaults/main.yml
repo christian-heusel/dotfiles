@@ -1,0 +1,4 @@
+---
+# defaults file for i3-configuration
+i3_config_dir: ".config/i3/"
+i3_default_terminal: "st"

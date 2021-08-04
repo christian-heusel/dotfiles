@@ -5,4 +5,5 @@
     - nvim-configuration
     - polybar-configuration
     - git-configuration
+    - i3-configuration
     - custom-scripts
