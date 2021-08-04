@@ -175,6 +175,7 @@ Plugin 'lervag/vimtex'
 Plugin 'neovimhaskell/haskell-vim'
 Plugin 'jparise/vim-graphql'
 Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'lepture/vim-jinja'
 
 " vim-obsession
 Plugin 'tpope/vim-obsession'

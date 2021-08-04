@@ -19,6 +19,8 @@
         - "init.vim"
   loop_control:
     loop_var: nvim_config_file
+  notify:
+    - plugin_install
 
 - name: copy the latexmkrc
   copy:
