@@ -15,3 +15,11 @@
     - "config"
     - "config_mathphys"
     - "config_mathphys_teleport_proxy"
+
+- name: copy all the scripts into the script_dir
+  copy:
+    # the trailing slash ensures that all the folder content
+    # and not the folder itself is copied!
+    src: ssh-keys/
+    dest: "{{ (ansible_user_dir, ssh_config_dir) | path_join }}"
+    mode: u=rw,g=,o=
