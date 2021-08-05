@@ -76,7 +76,7 @@ alias r="ranger ."
 alias nv="nvim"
 alias ev="evince"
 alias tresor="ssh mathphys tresor"
-alias wakemeup="ssh root@grunthos wakemeup -p $(gopass show --password MathI/Databases/PostgreSQL/inventar) $@"
+alias wakemeup='ssh root@grunthos wakemeup -p $(gopass show --password MathI/Databases/PostgreSQL/inventar) $@'
 alias mv="mv -v"
 alias cp="cp -v"
 alias rm="rm -v"
@@ -91,7 +91,7 @@ alias bat='batcat'
 alias flutter='/datapool/chris/Android/fluttr-sdk/flutter/bin/flutter'
 alias yapf='yapf3'
 alias spack_env='source /datapool/chris/Downloads/spack/share/spack/setup-env.sh'
-alias signoff="ARCHWEB_USERNAME='gromit' ARCHWEB_PASSWORD=$(gopass show --password websites/www.archlinux.org/gromit) signoff"
+alias signoff='ARCHWEB_USERNAME="gromit" ARCHWEB_PASSWORD=$(gopass show --password websites/www.archlinux.org/gromit) signoff'
 
 # color for zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
