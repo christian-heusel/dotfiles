@@ -88,6 +88,7 @@ desktop_packages:
   - gimp
   - gimp-nufraw
   - gopass
+  - gopass-jsonapi
   - gparted
   - kdenlive
   - libreoffice-fresh
@@ -146,25 +147,23 @@ i3_packages:
   - x11-ssh-askpass
   - zenity
 
-aur:
+aur_packages:
+  - chkrootkit
+  - dcfldd
   - google-chrome
   - i3-gaps-next-git
   - ly
   - polybar-git
+  - rpiplay-git
+  - scrcpy
+  - screenkey-git
+  - seafile-client
   - skypeforlinux-preview-bin
+  - slack-desktop
   - spotify
   - teleport
+  - v4l2loopback-dkms-git
   - webex-bin
+  - xcowsay
   - yay
   - zoom
-  - xcowsay
-  - slack-desktop
-  - v4l2loopback-dkms-git
-  - seafile-client
-  - chkrootkit
-  - dcfldd
-  - libu2f-host
-  - rpiplay-git
-  - screenkey-git
-  - gopass-jsonapi-git
-  - scrcpy

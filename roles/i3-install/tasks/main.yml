@@ -4,9 +4,9 @@
 - include_vars: "{{ item }}"
   with_first_found:
     - files:
-        - "{{ ansible_os_family }}.yml"
+        - "{{ ansible_distribution }}.yml"
 
-- name: "install all the specific packages"
+- name: "install all the packages"
   ansible.builtin.package:
     name: "{{ item.packages }}"
     state: present
@@ -18,3 +18,6 @@
       packages: "{{ desktop_packages }}"
     - name: i3
       packages: "{{ i3_packages }}"
+
+- include_tasks: "aur.yml"
+  when: ansible_facts['distribution'] == "Archlinux"

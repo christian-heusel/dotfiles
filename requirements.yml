@@ -1,0 +1,7 @@
+---
+roles:
+  - src: kewlfft.aur
+
+collections:
+  - name: community.general
+    version: 3.3.0

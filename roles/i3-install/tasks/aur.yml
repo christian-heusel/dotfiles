@@ -1,0 +1,32 @@
+---
+- name: set the name of the pacman/aur build user
+  set_fact:
+    aur_build_user: "pacman_autouser"
+
+- name: create the aur user
+  ansible.builtin.user:
+    name: "{{ aur_build_user }}"
+    create_home: yes  # sadly needed for some aur packages
+    group: wheel
+  become: yes
+
+- name: allow the user to execute pacman as root
+  lineinfile:
+    path: /etc/sudoers.d/11-install-aur_builder
+    line: '"{{ aur_build_user }}" ALL=(ALL) NOPASSWD: /usr/bin/pacman'
+    create: yes
+    validate: 'visudo -cf %s'
+  become: yes
+
+- name: install the packages from AUR
+  aur:
+    name: "{{ package }}"
+    use: makepkg
+    state: present
+    aur_only: yes
+  become: yes
+  become_user: "{{ aur_build_user }}"
+  loop: "{{ aur_packages }}"
+  loop_control:
+    loop_var: package
+  ignore_errors: yes
