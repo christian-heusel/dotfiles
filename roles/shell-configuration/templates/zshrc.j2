@@ -4,8 +4,8 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/chris/.oh-my-zsh
 
-zstyle :omz:plugins:ssh-agent identities id_rsa theeboladoc@gitlab.com pvk19
-zstyle :omz:plugins:ssh-agent identities
+zstyle :omz:plugins:ssh-agent identities id_rsa
+# zstyle :omz:plugins:ssh-agent identities
 zstyle :omz:plugins:ssh-agent lifetime 3h
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -91,26 +91,11 @@ alias bat='batcat'
 alias flutter='/datapool/chris/Android/fluttr-sdk/flutter/bin/flutter'
 alias yapf='yapf3'
 alias spack_env='source /datapool/chris/Downloads/spack/share/spack/setup-env.sh'
-
-rm-tex() {
-    [ -x ./*.aux ] && rm ./*.aux
-    [ -x ./*.fdb_latexmk ] && rm ./*.fdb_latexmk
-    [ -x ./*.fls ] && rm ./*.fls
-    [ -x ./*.log ] && rm ./*.log
-    [ -x ./*.nav ] && rm ./*.nav
-    [ -x ./*.out ] && rm ./*.out
-    [ -x ./*.toc ] && rm ./*.toc
-    [ -x ./*.vrb ] && rm ./*.vrb
-    [ -x ./*.snm ] && rm ./*.snm
-}
-
-copy() {
-    cat $1 | xclip -selection clipboard
-}
+alias signoff="ARCHWEB_USERNAME='gromit' ARCHWEB_PASSWORD=$(gopass show --password websites/www.archlinux.org/gromit) signoff"
 
 # color for zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
-export GPG_TTY=$(tty) 
+# export GPG_TTY=$(tty) 
 
 export PATH=$PATH:$HOME/.local/bin
 export ANSIBLE_NOCOWS=1
