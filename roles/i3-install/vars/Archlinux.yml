@@ -1,6 +1,8 @@
 ---
 # vars file for i3-install
 
+greeter_unit_name: ly.service
+
 base_packages:
   - ansible
   - ansible-lint
@@ -42,6 +44,7 @@ base_packages:
   - nfs-utils
   - nmap
   - ntfs-3g
+  - openssh
   - openssh
   - pacman-contrib
   - pandoc

@@ -21,3 +21,9 @@
 
 - include_tasks: "aur.yml"
   when: ansible_facts['distribution'] == "Archlinux"
+
+- name: enable the greeter
+  ansible.builtin.systemd:
+    enabled: yes
+    name: "{{ greeter_unit_name }}"
+  become: yes
