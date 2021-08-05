@@ -28,9 +28,10 @@
 
 - name: install vundle
   ansible.builtin.git:
-    repo: "https://github.com/VundleVim/Vundle.vim.git "
+    repo: "https://github.com/VundleVim/Vundle.vim.git"
     dest: "{{ (ansible_user_dir, nvim_config_dir, 'bundle', 'Vundle.vim') | path_join }}"
     update: false
+    accept_hostkey: true
 
 - name: create the neovim plugin file
   ansible.builtin.template:

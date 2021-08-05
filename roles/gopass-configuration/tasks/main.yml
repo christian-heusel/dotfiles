@@ -25,4 +25,5 @@
     repo: "{{ item.git_url }}"
     dest: "{{ item.path }}"
     update: false
+    accept_hostkey: true
   with_items: "{{ [default_store] + other_mounts }}"

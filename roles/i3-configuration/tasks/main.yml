@@ -19,7 +19,7 @@
     dest: "{{ (ansible_user_dir, i3_config_dir, 'config') | path_join }}"
     mode: u+r-wx
     backup: yes
-    validate: "i3 -c %s -C"
+    validate: "i3 -C -c %s"
   notify:
     - i3_reload
 
