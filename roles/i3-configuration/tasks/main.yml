@@ -28,15 +28,3 @@
     src: "rofi.conf"
     dest: "{{ (ansible_user_dir, i3_config_dir, 'rofi.conf') | path_join }}"
     mode: u+r-wx
-
-- name: create the variety conf dir
-  ansible.builtin.file:
-    path: "{{ (ansible_user_dir, variety_config_dir) | path_join }}"
-    state: directory
-    mode: '0755'
-
-- name: copy the variety config file to the correct dir
-  ansible.builtin.copy:
-    src: "variety.conf"
-    dest: "{{ (ansible_user_dir, variety_config_dir, 'variety.conf') | path_join }}"
-    mode: u+r-wx

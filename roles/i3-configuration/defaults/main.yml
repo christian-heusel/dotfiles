@@ -1,6 +1,5 @@
 ---
 # defaults file for i3-configuration
 i3_config_dir: ".config/i3/"
-variety_config_dir: ".config/variety/"
 i3_default_terminal: "st"
 i3_default_screenshot: "shutter"
