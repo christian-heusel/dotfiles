@@ -16,7 +16,7 @@
     - "config_mathphys"
     - "config_mathphys_teleport_proxy"
 
-- name: copy all the scripts into the script_dir
+- name: copy the ssh keys
   copy:
     # the trailing slash ensures that all the folder content
     # and not the folder itself is copied!
