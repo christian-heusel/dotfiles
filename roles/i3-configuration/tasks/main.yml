@@ -15,7 +15,7 @@
 
 - name: copy the i3 config file to the correct dir
   ansible.builtin.template:
-    src: "i3_config"
+    src: "i3_config.j2"
     dest: "{{ (ansible_user_dir, i3_config_dir, 'config') | path_join }}"
     mode: u+r-wx
     backup: yes

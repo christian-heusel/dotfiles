@@ -1,5 +1,6 @@
 ---
 i3_default_terminal: "terminator"
+i3_default_screenshot: "spectacle"
 i3_screen_config: |
   # my current setup
   set $firstMonitor DP-0.1.8
@@ -26,3 +27,14 @@ i3_screen_config: |
   workspace 12 output $secondMonitor
   workspace 13 output $secondMonitor
   workspace 14 output $secondMonitor
+i3_user_applications:
+  - "exec telegram-desktop"
+  - "exec signal-desktop"
+  - "exec zoiper5"
+  - "exec element-desktop"
+  - "exec slack"
+  - "exec firefox"
+  - "exec thunderbird"
+  - "exec --no-startup-id spotify"
+  - "exec --no-startup-id discord --disable-sandbox"
+  - "exec_always picom # --config ~/.config/i3/compton.conf"

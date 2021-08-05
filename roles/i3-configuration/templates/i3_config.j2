@@ -188,7 +188,7 @@ bindsym $mod+Shift+equal      move container to workspace 10; workspace 10
 # you can find the class with the program xprop
 
 assign [class="thunderbird|Evolution"]                                              → 2
-assign [class="Firefox-esr"]                                                        → 3
+assign [class="Firefox-esr|firefox"]                                                → 3
 assign [class="Inkscape"]                                                           → 3
 assign [class="Gimp"]                                                               → 4
 assign [class="ristretto|Ristretto|shotwell|Shotwell|Xviewer"]                      → 5
@@ -223,37 +223,14 @@ exec variety
 
 # USER APPLICATIONS
 
-# distro dependent applications are at bottom of config like filemanager ...
 for_window [class="Telegram"] focus
-
-# telegram
-exec telegram-desktop
-exec signal-desktop
-
-# zoiper
-exec zoiper5
-
-exec element-desktop
-exec slack
-
-
-# browsers
-exec firefox
 for_window [class="Firefox"] focus
-
-# Mail clients
-exec thunderbird
-
-# IRC
-# exec --no-startup-id i3-msg 'workspace 13; exec st -e weechat'
-
-# Music
-exec --no-startup-id spotify
 for_window [class="Spotify"] focus
+for_window [class="discord"] focus
 
-# Discord
-exec --no-startup-id discord --disable-sandbox
-for_window[class="discord"] focus
+{% for user_application in i3_user_applications %}
+{{ user_application }}
+{% endfor %}
 
 ################### SHORTCUTS APPLICATIONS ######################
 #mod1 = ALT
@@ -317,7 +294,7 @@ bindsym $mod+Shift+s exec --no-startup-id {{ (ansible_user_dir, script_dir, "shu
 
 
 bindsym Print exec --no-startup-id {{ (ansible_user_dir, script_dir, "scrot.sh") | path_join }}
-bindsym $mod+Print exec --no-startup-id shutter
+bindsym $mod+Print exec --no-startup-id {{ i3_default_screenshot }}
 
 
 ################### FLOATING OR TILED ######################
@@ -451,14 +428,6 @@ client.focused_inactive #222222 #222222 #a9a9a9 #222222
 client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
 
 exec --no-startup-id {{ (ansible_user_dir, polybar_config_dir, 'polybar_launcher.sh') | path_join }}
-
-###########################################################################
-###################       C O M P T O N      ##############################
-###########################################################################
-
-#if you want transparency on non-focused windows
-exec_always picom # --config ~/.config/i3/compton.conf
-
 
 ###########################################################
 ################### DISTRO DEPENDENT ######################
