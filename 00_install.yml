@@ -1,0 +1,7 @@
+---
+
+- name: "Step 0: Install all the packages"
+  hosts: 127.0.0.1
+  connection: local
+  roles:
+    - i3-install

@@ -1,0 +1,20 @@
+---
+# tasks file for i3-install
+
+- include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+        - "{{ ansible_os_family }}.yml"
+
+- name: "install all the specific packages"
+  ansible.builtin.package:
+    name: "{{ item.packages }}"
+    state: present
+  become: true
+  with_items:
+    - name: base
+      packages: "{{ base_packages }}"
+    - name: desktop
+      packages: "{{ desktop_packages }}"
+    - name: i3
+      packages: "{{ i3_packages }}"
