@@ -1,0 +1,16 @@
+---
+i3_screen_config: |
+  # my current setup
+  set $firstMonitor Virtual-1
+  set $secondMonitor HDMI-2
+
+  # setting variables for later use
+  # use xrandr and/or arandr to know the names of your monitors
+  # use this line to tell which monitor is on the right
+  exec xrandr --output $firstMonitor --mode 1024x768 --primary
+  exec xrandr --output $secondMonitor --mode 1920x1080 --right-of $firstMonitor
+i3_user_applications:
+  - "exec telegram-desktop"
+  - "exec signal-desktop"
+  - "exec firefox"
+  - "exec thunderbird"
