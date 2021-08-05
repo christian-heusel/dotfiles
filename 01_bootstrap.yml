@@ -1,12 +1,10 @@
 ---
-- hosts: 127.0.0.1
+
+- name: "Step 1: Provision the essentials"
+  hosts: 127.0.0.1
   connection: local
   roles:
-    - nvim-configuration
-    - polybar-configuration
     - git-configuration
     - ssh-configuration
-    - gopass-configuration
-    - i3-configuration
     - shell-configuration
     - custom-scripts
