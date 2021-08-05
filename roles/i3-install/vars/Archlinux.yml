@@ -96,6 +96,10 @@ desktop_packages:
   - nextcloud-client
   - obs-studio
   - owncloud-client
+  - archlinux-wallpaper
+  - elementary-wallpapers
+  - deepin-wallpapers
+  - deepin-community-wallpapers
   - pdfpc
   - qutebrowser
   - screenfetch
