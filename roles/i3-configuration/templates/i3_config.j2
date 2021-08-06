@@ -187,7 +187,7 @@ bindsym $mod+Shift+equal      move container to workspace 10; workspace 10
 # Assign application to start on a specific workspace
 # you can find the class with the program xprop
 
-assign [class="thunderbird|Evolution"]                                              → 2
+assign [class="thunderbird|Thunderbird"]                                            → 2
 assign [class="Firefox-esr|firefox"]                                                → 3
 assign [class="Inkscape"]                                                           → 3
 assign [class="Gimp"]                                                               → 4
@@ -236,12 +236,12 @@ for_window [class="discord"] focus
 #mod1 = ALT
 
 #workspace 1 related
-bindsym control+mod1+f exec firefox;workspace 1; focus
 
 #workspace 2 related
 #sublime text see at bottom distro dependent
 
 #workspace 3 related
+bindsym control+mod1+f exec firefox;workspace 3; focus
 
 #workspace 4 related
 
