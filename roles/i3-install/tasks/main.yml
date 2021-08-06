@@ -27,3 +27,20 @@
     enabled: yes
     name: "{{ greeter_unit_name }}"
   become: yes
+
+- name: create the user 'chris'
+  ansible.builtin.user:
+    name: chris
+    shell: /bin/zsh
+    groups: wheel
+
+- name: allow the me to execute sudo
+  lineinfile:
+    path: /etc/sudoers.d/00-sudo
+    line: "{{ item }}"
+    create: yes
+    validate: 'visudo -cf %s'
+  become: yes
+  with_items:
+    - "%wheel ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown"
+    - "%wheel ALL=(ALL) ALL"
