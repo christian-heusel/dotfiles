@@ -18,9 +18,11 @@
     src: "polybar_config"
     dest: "{{ (ansible_user_dir, polybar_config_dir, 'config') | path_join }}"
     mode: u+r-wx
+  notify: polybar_restart
 
 - name: copy the polybar launchscript to the correct dir
-  copy:
-    src: "polybar_launcher.sh"
+  ansible.builtin.template:
+    src: "polybar_launcher.sh.j2"
     dest: "{{ (ansible_user_dir, polybar_config_dir, 'polybar_launcher.sh') | path_join }}"
     mode: u=rx,g=,o=
+  notify: polybar_restart

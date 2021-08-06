@@ -8,7 +8,6 @@ while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # Launch bar1 and bar2
 sleep 2
-polybar example -c .config/polybar/config &
-
+polybar example -c {{ (ansible_user_dir, polybar_config_dir, 'config') | path_join }} &
 
 echo "Bars launched..."
