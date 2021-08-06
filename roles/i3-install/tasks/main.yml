@@ -45,3 +45,11 @@
   with_items:
     - "%wheel ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown"
     - "%wheel ALL=(ALL) ALL"
+
+- name: disable action on lid close
+  lineinfile:
+    path: /etc/systemd/logind.conf
+    line: "HandleLidSwitch=ignore"
+    regexp: '^HandleLidSwitch='
+    insertafter: '^#HandleLidSwitch='
+  become: yes
