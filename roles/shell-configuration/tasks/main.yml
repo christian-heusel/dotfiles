@@ -6,6 +6,7 @@
     name: "{{ ansible_user_id }}"
     shell: "{{ default_shell }}"
   become: yes
+  when: ansible_user_shell != default_shell
 
 - name: install oh-my-zsh
   ansible.builtin.shell:
