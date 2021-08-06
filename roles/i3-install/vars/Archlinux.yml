@@ -77,6 +77,7 @@ base_packages:
   - which
   - whois
   - yapf
+  - yamllint
   - youtube-dl
   - zbar
   - zsh
@@ -130,14 +131,15 @@ i3_packages:
   - arandr
   - arc-gtk-theme
   - dmenu
+  - dunst
   - feh
   - ffmpegthumbnailer
   - gnome-keyring
   - i3lock
   - nemo
   - nemo-python
-  - networkmanager
   - network-manager-applet
+  - networkmanager
   - networkmanager-openconnect
   - nm-connection-editor
   - numlockx
@@ -152,6 +154,7 @@ i3_packages:
   - variety
   - w3m
   - x11-ssh-askpass
+  - xorg-fonts-misc
   - zenity
 
 aur_packages:
@@ -174,3 +177,5 @@ aur_packages:
   - xcowsay
   - yay
   - zoom
+  - ttf-unifont
+  - sittf-unifont siji-gitji-git
