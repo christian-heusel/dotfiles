@@ -1,5 +1,11 @@
 ---
 
+- include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+        # allows for specific configs per host
+        - "{{ ansible_hostname }}.yml"
+
 - name: "Step 1: Provision the essentials"
   hosts: 127.0.0.1
   connection: local

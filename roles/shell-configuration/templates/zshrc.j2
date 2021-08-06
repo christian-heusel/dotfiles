@@ -60,7 +60,6 @@ alias i3config="nvim ~/.config/i3/config"
 alias polybarconfig="nvim ~/.config/polybar/config"
 alias vimconfig="$EDITOR $HOME/.config/nvim/init.vim"
 alias todo="nvim ~/TODO.txt"
-alias vimcat="/home/chris/.config/i3/my_scripts/vimcat"
 alias g++="g++ -Wall -std=c++14 -pedantic"
 alias g++11="\g++ -Wall -pedantic -std=c++11"
 alias g++17="\g++ -Wall -pedantic -std=c++17"
@@ -88,9 +87,9 @@ alias protokoll="~/.config/i3/my_scripts/protokoll.sh"
 alias vimdiff="nvim -d"
 alias gparted='gksu -u root -m "root authentication is required to use gparted" "gparted"'
 alias bat='batcat'
-alias flutter='/datapool/chris/Android/fluttr-sdk/flutter/bin/flutter'
+alias flutter='{{ sdk_path }}/flutter-sdk/bin/flutter'
 alias yapf='yapf3'
-alias spack_env='source /datapool/chris/Downloads/spack/share/spack/setup-env.sh'
+alias spack_env='source {{ sdk_path }}/spack/share/spack/setup-env.sh'
 alias signoff='ARCHWEB_USERNAME="gromit" ARCHWEB_PASSWORD=$(gopass show --password websites/www.archlinux.org/gromit) signoff'
 
 # color for zsh-autosuggestions
