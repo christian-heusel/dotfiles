@@ -10,6 +10,24 @@ i3_screen_config: |
   exec xrandr --output $firstMonitor --mode 1366x768 --primary
   exec xrandr --output $secondMonitor --mode 1920x1080 --right-of $firstMonitor
   exec ~/.screenlayout/daheim_2_mon.sh
+
+  ###########################################################################
+  ###################  I 3  G A P S  N E X T   ##############################
+  ###########################################################################
+
+  # Settings for I3 next gap git
+  # https://github.com/Airblader/i3/tree/gaps-next
+  # Archlinux via aur installation
+  # http://dotx.me/snippets-i3-gaps/
+  # delete or uncomment the following lines if you do not have it or do not
+  # want it
+  # packer i3-gaps-next-git --noedit
+
+  for_window [class="^.*"] border pixel 0
+  gaps inner 8
+  gaps outer 2
+  #smart_gaps on
+  #smart_borders on
 i3_user_applications:
   - "exec telegram-desktop"
   - "exec signal-desktop"
