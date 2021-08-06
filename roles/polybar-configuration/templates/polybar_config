@@ -288,7 +288,7 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
-battery = {{ battery_name }}
+battery = {{ battery_name | default("")}}
 adapter = ACAD
 full-at = 98
 
