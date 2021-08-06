@@ -34,3 +34,6 @@ i3_user_applications:
   - "exec signal-desktop"
   - "exec firefox"
   - "exec thunderbird"
+  - "exec owncloud"
+  - "exec nextcloud --background"
+  - "exec seafile-applet"
