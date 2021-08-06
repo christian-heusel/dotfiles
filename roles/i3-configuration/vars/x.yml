@@ -28,6 +28,7 @@ i3_screen_config: |
   gaps outer 2
   #smart_gaps on
   #smart_borders on
+
 i3_user_applications:
   - "exec telegram-desktop"
   - "exec signal-desktop"
