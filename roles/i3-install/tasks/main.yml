@@ -33,6 +33,7 @@
     name: chris
     shell: /bin/zsh
     groups: wheel
+    append: yes
   become: yes
 
 - name: allow the me to execute sudo
