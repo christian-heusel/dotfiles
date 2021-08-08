@@ -83,12 +83,17 @@ base_packages:
   - zsh
 
 desktop_packages:
+  - archlinux-wallpaper
   - audacity
   - code
+  - deepin-community-wallpapers
+  - deepin-wallpapers
   - discord
   - element-desktop
+  - elementary-wallpapers
   - evince
   - firefox
+  - github-cli
   - gimp
   - gimp-nufraw
   - gopass
@@ -100,10 +105,6 @@ desktop_packages:
   - nextcloud-client
   - obs-studio
   - owncloud-client
-  - archlinux-wallpaper
-  - elementary-wallpapers
-  - deepin-wallpapers
-  - deepin-community-wallpapers
   - pdfpc
   - qutebrowser
   - screenfetch
