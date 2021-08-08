@@ -31,7 +31,7 @@
 - name: create the user 'chris'
   ansible.builtin.user:
     name: chris
-    shell: /bin/zsh
+    shell: "{{ default_shell }}"
     groups: wheel
     append: yes
   become: yes

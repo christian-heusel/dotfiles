@@ -1,4 +1,8 @@
 ---
+- hosts: 127.0.0.1
+  connection: local
+  tasks:
+    - include_vars: "defaults.yml"
 
 - name: "Step 0: Install all the packages"
   hosts: 127.0.0.1
