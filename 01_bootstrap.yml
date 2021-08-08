@@ -3,11 +3,12 @@
 - hosts: 127.0.0.1
   connection: local
   tasks:
-  - include_vars: "{{ ('vars', item) | path_join }}"
-    with_first_found:
-      - files:
-          # allows for specific configs per host
-          - "{{ ansible_hostname }}.yml"
+    - include_vars: "{{ ('vars', item) | path_join }}"
+      with_first_found:
+        - files:
+            # allows for specific configs per host
+            - "{{ ansible_hostname }}.yml"
+    - include_vars: "defaults.yml"
 
 - name: "Step 1: Provision the essentials"
   hosts: 127.0.0.1
