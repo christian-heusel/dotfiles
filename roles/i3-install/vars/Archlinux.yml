@@ -19,6 +19,7 @@ base_packages:
   - exfat-utils
   - file
   - findutils
+  - fwupd
   - gcc
   - gcc-fortran
   - gdb
