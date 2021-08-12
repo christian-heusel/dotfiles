@@ -2,6 +2,6 @@
 # handlers for i3-configuration
 
 - name: reload the i3 settings
-  shell: i3-msg "reload"
+  command: i3-msg "reload"
   listen: i3_reload
   when: lookup('env', 'DISPLAY') | default(false)

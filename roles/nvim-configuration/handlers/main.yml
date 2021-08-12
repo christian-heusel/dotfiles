@@ -2,5 +2,5 @@
 # handlers for nvim-configuration
 
 - name: re-install the neovim plugins
-  shell: nvim --headless +PluginInstall +qall
+  command: nvim --headless +PluginInstall +qall
   listen: plugin_install

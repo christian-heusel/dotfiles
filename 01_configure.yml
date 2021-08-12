@@ -5,12 +5,15 @@
   tags:
     - always
   tasks:
-    - include_vars: "{{ ('vars', item) | path_join }}"
+    - name: include the host-specific vars
+      include_vars: "{{ ('vars', item) | path_join }}"
       with_first_found:
         - files:
             # allows for specific configs per host
             - "{{ ansible_hostname }}.yml"
-    - include_vars: "defaults.yml"
+
+    - name: include the default vars
+      include_vars: "defaults.yml"
 
 - name: "Step 1: Provision the essentials"
   hosts: 127.0.0.1

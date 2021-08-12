@@ -2,6 +2,6 @@
 # handlers for polybar-configuration
 
 - name: restart polybar
-  shell: "i3-msg 'exec {{ (ansible_user_dir, polybar_config_dir, 'polybar_launcher.sh') | path_join }}'"
+  command: "i3-msg 'exec {{ (ansible_user_dir, polybar_config_dir, 'polybar_launcher.sh') | path_join }}'"
   listen: polybar_restart
   when: lookup('env', 'DISPLAY') | default(false)

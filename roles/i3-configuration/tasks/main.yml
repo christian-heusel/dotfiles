@@ -1,7 +1,8 @@
 ---
 # tasks file for i3-configuration
 
-- include_vars: "{{ item }}"
+- name: include the host-specific vars
+  include_vars: "{{ item }}"
   with_first_found:
     - files:
         # allows for specific configs per host

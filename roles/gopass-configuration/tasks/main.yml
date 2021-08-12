@@ -1,13 +1,6 @@
 ---
 # tasks file for gopass-configuration
 
-- include_vars: "{{ item }}"
-  with_first_found:
-    - files:
-        # allows for specific configs per host
-        - "{{ ansible_hostname }}.yml"
-      skip: true
-
 - name: create the gopass conf dir
   ansible.builtin.file:
     path: "{{ (ansible_user_dir, gopass_config_dir) | path_join }}"
