@@ -1,0 +1,40 @@
+#!/bin/bash -
+#===============================================================================
+#
+#          FILE: update_and_run.sh
+#
+#         USAGE: ./update_and_run.sh
+#
+#   DESCRIPTION: Pulls and runs my dotfile configuration
+#
+#  REQUIREMENTS: git, ansible-playbook, moreutils
+#        AUTHOR: Christian Heusel (christian@heusel.eu)
+#       CREATED: 08/12/2021 11:40
+#
+#===============================================================================
+
+set -o history -o histexpand                # set these so !! is defined
+set -o nounset                              # Treat unset variables as an error
+
+error_text=""
+
+# this gets the return code and full command
+check_error () {
+    if [ $1 -eq 0 ]; then
+        echo OK
+    else
+        error_text=$(echo "There was an error executing \"${@:2}\"")
+        zenity --error --width="500" --height=20 --timeout=5 \
+               --text "$error_text" --title "$0"
+    fi
+}
+
+
+cd {{ playbook_dir }}
+git pull --autostash
+
+check_error $? !!
+
+chronic ansible-playbook 01_configure.yml
+
+check_error $? !!

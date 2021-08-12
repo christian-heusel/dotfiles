@@ -1,0 +1,7 @@
+[Unit]
+Description=Apply my dotfile and user configuration
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash {{ (ansible_user_dir, script_dir, "update_and_run.sh") | path_join }}
+Environment="ANSIBLE_NOCOWS=1"

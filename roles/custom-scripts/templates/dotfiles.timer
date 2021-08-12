@@ -1,0 +1,11 @@
+[Unit]
+Description=Timer to update my user config
+
+[Timer]
+OnBootSec=10s
+RandomizedDelaySec=60
+# run every 15 min
+OnCalendar=*:0/15
+
+[Install]
+WantedBy=timers.target
