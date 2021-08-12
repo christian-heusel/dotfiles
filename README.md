@@ -1,5 +1,16 @@
 # My Dotfiles
 
+This is not really meant to be used by other people (atleast directly), but feel free to look into my ansible playbooks and roles!
+
+0. Install the dependent AUR role
+   ```cmd
+   # ansible-galaxy install --role-file=requirements.yml
+   ```
+1. refresh the mirrors (and update):
+   ```cmd
+   # pacman -Sy
+   # pacman -Syu
+   ```
 1. Install all the Programs
    ```cmd
    # ansible-playbook 00_install.yml

@@ -7,7 +7,7 @@
   ansible.builtin.user:
     name: "{{ aur_build_user }}"
     create_home: yes  # sadly needed for some aur packages
-    group: wheel
+    system: yes
   become: yes
 
 - name: allow the user to execute pacman as root
