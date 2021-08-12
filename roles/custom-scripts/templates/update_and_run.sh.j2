@@ -35,6 +35,6 @@ git pull --autostash
 
 check_error $? !!
 
-chronic ansible-playbook 01_configure.yml
+chronic -v ansible-playbook 01_configure.yml
 
 check_error $? !!

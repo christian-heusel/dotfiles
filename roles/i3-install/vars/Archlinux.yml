@@ -38,6 +38,7 @@ base_packages:
   - lxappearance
   - man-db
   - mlocate
+  - moreutils
   - nano
   - ncdu
   - neofetch
@@ -77,8 +78,8 @@ base_packages:
   - wget
   - which
   - whois
-  - yapf
   - yamllint
+  - yapf
   - youtube-dl
   - zbar
   - zsh
