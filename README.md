@@ -2,6 +2,9 @@
 
 This is not really meant to be used by other people (atleast directly), but feel free to look into my ansible playbooks and roles!
 
+## Notes for future me
+We work on a basic install of ArchLinux so far 😊 
+
 0. Install the dependent AUR role
    ```cmd
    # ansible-galaxy install --role-file=requirements.yml
