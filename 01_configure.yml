@@ -2,6 +2,8 @@
 
 - hosts: 127.0.0.1
   connection: local
+  tags:
+    - always
   tasks:
     - include_vars: "{{ ('vars', item) | path_join }}"
       with_first_found:
@@ -10,8 +12,16 @@
             - "{{ ansible_hostname }}.yml"
     - include_vars: "defaults.yml"
 
-- name: Include the "01_bootstrap.yml" Playbook
-  ansible.builtin.import_playbook: 01_bootstrap.yml
+- name: "Step 1: Provision the essentials"
+  hosts: 127.0.0.1
+  connection: local
+  tags:
+    - bootstrap
+  roles:
+    - git-configuration
+    - ssh-configuration
+    - shell-configuration
+    - custom-scripts
 
 - name: "Step 2: Configure the rest"
   hosts: 127.0.0.1
