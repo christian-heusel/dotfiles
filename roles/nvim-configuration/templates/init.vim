@@ -215,3 +215,7 @@ let g:vimtex_fold_enabled = 1
 let g:Tex_IgnoredWarnings = 'Overfull'."\n"
 let g:Tex_IgnoreLevel = 8
 
+" this is to secure gopass, taken from
+" https://github.com/gopasspw/gopass/blob/master/docs/setup.md#securing-your-editor
+au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
+
