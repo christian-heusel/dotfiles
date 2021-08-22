@@ -16,8 +16,6 @@
 # Print = PRINT key
 # Tab = TAB key
 
-# Key to rule them all : windows or Alt key?
-
 # Mod4 = windows key on keyboard or super key
 # Alt key is Mod1 if you want to change the $mod key
 set $mod Mod4
@@ -37,26 +35,16 @@ floating_modifier $mod
 bindsym $mod+Shift+space floating toggle
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
 bindsym $mod+Right focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
 bindsym $mod+Shift+Right move right
-
-
-###################       SCRATCHPAD      ##############################
-
-# move the currently focused window to the scratchpad
-# bindsym Mod1+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-# bindsym Mod1+minus scratchpad show
 
 
 ################### TILING PARAMETERS ##############################
@@ -117,27 +105,6 @@ bindsym Mod1+Shift+Right resize grow   width  5 px or 5 ppt
 
 ################### FONTS ######################
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-# choose your font
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# font -misc-fixed-bold-r-normal-*-15-140-75-75-c-90-iso10646-1
-# font pango:DejaVu Sans Mono 12
-# font pango:DejaVu Sans Mono, Terminus Bold Semi-Condensed 11
-# font pango:Droid Sans Mono Dotted 12
-# font pango:hermit 12
-# font pango:Inconsolata 15
-# font pango:monospace 12
-# font pango:SourceCodePro-SemiBold 11
-# font pango:Source Code Pro for Powerline, FontAwesome Regular, Icons 9
-# font pango:Terminus 14px
-# font pango:UbuntuMono-regular 12
-# from ttf-chromeos-fonts
-# font pango:Cousine 13
-# font pango:Arimo 11
-# font pango:Sans 13
-# font pango:Noto Mono Regular 13
-# font pango:DroidSansMono 13
 font pango:System San Francisco Display 11
 
 
@@ -145,7 +112,7 @@ font pango:System San Francisco Display 11
 
 # start rofi
 bindsym $mod+d exec rofi -lines "4" -fake-transparency -show run -config {{ (ansible_user_dir, i3_config_dir, 'rofi.conf') | path_join }}
-#bindsym $mod+d exec rofi -show run -config "/home/chris/.config/rofi/rofi_big.conf"
+
 # rofi ssh
 bindsym $mod+c exec rofi -lines "4" -terminal st -fake-transparency -show ssh -config {{ (ansible_user_dir, i3_config_dir, 'rofi.conf') | path_join }}
 
@@ -228,6 +195,8 @@ for_window [class="Firefox"] focus
 for_window [class="Spotify"] focus
 for_window [class="discord"] focus
 
+# This autostarts all relevant applications
+# In the future this is optimally replaced by systemd-user units ...
 {% for user_application in i3_user_applications %}
 {{ user_application }}
 {% endfor %}
@@ -292,7 +261,6 @@ bindsym $mod+Shift+s exec --no-startup-id {{ (ansible_user_dir, script_dir, "shu
 
 ################### SCREENSHOTS ######################
 
-
 bindsym Print exec --no-startup-id {{ (ansible_user_dir, script_dir, "scrot.sh") | path_join }}
 bindsym $mod+Print exec --no-startup-id {{ i3_default_screenshot }}
 
@@ -301,47 +269,39 @@ bindsym $mod+Print exec --no-startup-id {{ i3_default_screenshot }}
 
 
 # floating enabled from some programs - find with xprop
-for_window [class="^Gnome-font-viewer$"] floating enable
-for_window [class="^Gpick$"] floating enable
-#for_window [class="^Vlc$"] floating enable
-#for_window [class="^Spotify$"] floating enable workspace 10
-#for_window [instance="gimp"] floating enable
+for_window [class="^Gnome-font-viewer$"]               floating enable
+for_window [class="^Gpick$"]                           floating enable
 for_window [window_role="^gimp-toolbox-color-dialog$"] floating enable
-for_window [instance="variety"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="^Preferences$"] floating enable
-for_window [window_role="setup"] floating enable
-for_window [title="^Terminator Preferences$"] floating enable
-#for_window [class="Font-manager"] floating enable
-for_window [class="System-config-printer.py"] floating enable
-for_window [class="Nitrogen"] floating enable
-for_window [title="Copying"] floating enable
-for_window [title="Deleting"] floating enable
-for_window [title="Moving"] floating enable
-for_window [class="Galculator"] floating enable
-for_window [class="Usb-creator-gtk"] floating enable
-for_window [instance="script-fu"] border normal
-for_window [class="Imagewriter"] floating enable
-for_window [class="Blueberry"] floating enable
-for_window [class="Gtklp"] floating enable
-for_window [class="^Thunderbird|thunderbird"] layout stacking
-for_window [class="Pinentry"] floating enable
-for_window [class="Ristretto"] focus
-for_window [class="Shutter"] floating enable
-for_window [title="^Figure " class="^ $"] floating enable
-for_window [class="seafile-applet"] floating enable
-for_window [class="Seafile Client"] floating enable
+for_window [instance="variety"]                        floating enable
+for_window [class="Pavucontrol"]                       floating enable
+for_window [window_role="pop-up"]                      floating enable
+for_window [window_role="^Preferences$"]               floating enable
+for_window [window_role="setup"]                       floating enable
+for_window [title="^Terminator Preferences$"]          floating enable
+for_window [class="System-config-printer.py"]          floating enable
+for_window [class="Nitrogen"]                          floating enable
+for_window [title="Copying"]                           floating enable
+for_window [title="Deleting"]                          floating enable
+for_window [title="Moving"]                            floating enable
+for_window [class="Galculator"]                        floating enable
+for_window [class="Usb-creator-gtk"]                   floating enable
+for_window [class="Imagewriter"]                       floating enable
+for_window [class="Blueberry"]                         floating enable
+for_window [class="Gtklp"]                             floating enable
+for_window [class="Pinentry"]                          floating enable
+for_window [class="Shutter"]                           floating enable
+for_window [title="^Figure " class="^ $"]              floating enable
+for_window [class="seafile-applet"]                    floating enable
+for_window [class="Seafile Client"]                    floating enable
+for_window [class="^Thunderbird|thunderbird"]          layout stacking
+for_window [class="Ristretto"]                         focus
 
-
-#Popups during fullscreen mode
+# Popups during fullscreen mode
 popup_during_fullscreen smart
 
 
 ################### VARIETY ######################
 
-
-#Variety keybindings mod1 = ALT
 # trash wallpaper
 bindsym mod1+t exec variety -t
 # next wallpaper
@@ -350,13 +310,11 @@ bindsym mod1+Right exec variety -n
 # previous wallpaper
 bindsym mod1+p exec variety -p
 bindsym mod1+Left exec variety -p
-# favorite wallpaper
-bindsym mod1+f exec variety -f
 
 
 ################## Backlight ###################
 
-#script $1 states up,down or default; $2 defines how big the steps by $1{1,2} are
+# script $1 states up,down or default; $2 defines how big the steps by $1{1,2} are
 bindsym XF86MonBrightnessUp   exec --no-startup-id {{ (ansible_user_dir, script_dir, "xbacklight.sh") | path_join }} 1 5
 bindsym XF86MonBrightnessDown exec --no-startup-id {{ (ansible_user_dir, script_dir, "xbacklight.sh") | path_join }} 2 5
 
@@ -370,11 +328,6 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioStop exec playerctl stop
-#bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause" 
-#bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next" 
-#bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
-#bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
-
 
 
 ################### BAR ######################
@@ -412,20 +365,10 @@ exec --no-startup-id setxkbmap de
 ###################       UNCLUTTER      ##############################
 
 # get the mouse out of the way with unclutter
-exec unclutter 
+exec unclutter
 
 
-###################     BAR APPEARANCE    ######################
-
-# DarkGrey background with white text - not focus grey background - black text
-# Windows decoration colors
-# class                 border  backgr. text    indicator
-client.placeholder      #242424 #242424 #242424
-client.background       #242424 #242424 #242424
-client.focused          #4A4A4A #4A4A4A #e5e5e5 #4A4A4A
-client.unfocused        #222222 #222222 #aaaaaa #222222
-client.focused_inactive #222222 #222222 #a9a9a9 #222222
-client.urgent           #4A4A4A #4A4A4A #f7f7f7 #4A4A4A
+###################     BAR ######################
 
 exec --no-startup-id {{ (ansible_user_dir, polybar_config_dir, 'polybar_launcher.sh') | path_join }}
 
@@ -433,16 +376,12 @@ exec --no-startup-id {{ (ansible_user_dir, polybar_config_dir, 'polybar_launcher
 ################### DISTRO DEPENDENT ######################
 ###########################################################
 
-bindsym $mod+Return exec {{ i3_default_terminal }};focus
-
+bindsym $mod+Return exec {{ i3_default_terminal }}; focus
 
 bindsym control+mod1+t exec i3-sensible-terminal; focus
-#bindsym control+mod1+t exec terminator;focus
-
 
 # System monitor
 bindsym control+Shift+Escape exec gnome-system-monitor;focus
-
 
 # workspace 2 related
 #bindsym $mod+F2 exec subl;workspace 2;focus
@@ -452,15 +391,10 @@ bindsym control+mod1+w exec subl3;workspace 2;focus
 
 # workspace 8 related
 
-# file managers
-
-#exec nemo --no-desktop
-
 #filemanager focus
 for_window [class="Nemo"] focus
 
 bindsym $mod+Shift+Return exec nemo --no-desktop;focus
-bindsym control+mod1+b exec nemo --no-desktop;workspace 8;focus
 
 # arch/antergos
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -469,9 +403,6 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec blueberry-tray
 
 # sync services
-
-# slack
-# exec slack
 
 for_window [instance="TODOLISTTERMINAL"] floating enable, move position center, resize set 800 500;
 bindsym $mod+Shift+t exec --no-startup-id {{ (ansible_user_dir, script_dir, "toggle_todo.sh") | path_join }}
