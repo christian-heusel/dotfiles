@@ -1,3 +1,10 @@
 ---
 script_dir: ".config/i3/my_scripts"
 default_shell: "/bin/zsh"
+special_user_fonts:
+  - url: "https://fonts.google.com/download?family=Source%20Sans%20Pro"
+    main_file: "SourceSansPro-Regular.ttf"
+  - url: "https://fonts.google.com/download?family=Permanent%20Marker"
+    main_file: "PermanentMarker-Regular.ttf"
+  - url: "https://dl.dafont.com/dl/?f=campus"
+    main_file: "CAMPUS PERSONAL USE.ttf"

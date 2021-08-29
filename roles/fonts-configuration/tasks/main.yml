@@ -1,0 +1,18 @@
+---
+# tasks file for fonts-configuration
+
+- name: create the fonts directory
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, font_directory) | path_join }}"
+    state: directory
+    mode: '0755'
+
+- name: download all the fonts and copy them into the font directory
+  ansible.builtin.unarchive:
+    src: "{{ font.url }}"
+    dest: "{{ (ansible_user_dir, font_directory) | path_join  }}"
+    remote_src: yes
+    creates: "{{ (ansible_user_dir, font_directory, font.main_file) | path_join }}"
+  loop: "{{ special_user_fonts }}"
+  loop_control:
+    loop_var: font
