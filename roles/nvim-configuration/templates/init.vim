@@ -85,6 +85,7 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 
 let g:ale_python_pylint_args = "--rcfile=\"" . join(systemlist("git rev-parse --show-toplevel")) . "/.pylintrc\""
+let g:ale_yaml_yamllint_args = "-c \"" . join(systemlist("git rev-parse --show-toplevel")) . "/.yamllint\""
 let g:ale_fixers = {
 \     'python': ['yapf',],
 \     'cpp': ['clang-format',],
