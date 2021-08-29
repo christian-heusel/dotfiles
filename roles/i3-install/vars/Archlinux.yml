@@ -155,6 +155,7 @@ i3_packages:
   - pulseaudio-zeroconf
   - rofi
   - scrot
+  - ttf-font-awesome
   - variety
   - w3m
   - x11-ssh-askpass
