@@ -94,6 +94,7 @@ desktop_packages:
   - element-desktop
   - elementary-wallpapers
   - evince
+  - file-roller
   - firefox
   - github-cli
   - gimp
