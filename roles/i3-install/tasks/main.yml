@@ -28,6 +28,12 @@
     name: "{{ greeter_unit_name }}"
   become: yes
 
+- name: create the wheel group
+  ansible.builtin.group:
+    name: wheel
+    state: present
+  become: yes
+
 - name: create the user 'chris'
   ansible.builtin.user:
     name: chris
