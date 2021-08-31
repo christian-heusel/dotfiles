@@ -5,9 +5,21 @@
     state: directory
     mode: '0755'
 
+- name: get the rofi version
+  ansible.builtin.shell:
+    cmd: "rofi -version | cut -d ':' -f 2| sed 's/ //g'"
+  register: rofi_version
+
 - name: copy the rofi config file to the correct dir
   ansible.builtin.template:
     src: "rofi.conf"
     dest: "{{ (ansible_user_dir, rofi_config_dir, 'config.rasi') | path_join }}"
     mode: u+r-wx
     validate: "rofi -rasi-validate %s"
+  when: rofi_version.stdout is version( "1.6.0", '>=')
+
+- name: ensure that the config file is not present for versions <= 1.6.0
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, rofi_config_dir, 'config.rasi') | path_join }}"
+    state: absent
+  when: rofi_version.stdout is version( "1.6.0", '<=')
