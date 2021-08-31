@@ -7,8 +7,9 @@
 
 - name: get the rofi version
   ansible.builtin.shell:
-    cmd: "rofi -version | cut -d ':' -f 2| sed 's/ //g'"
+    cmd: "rofi -version | cut -d ':' -f 2 | sed 's/ //g'"
   register: rofi_version
+  changed_when: false
 
 - name: copy the rofi config file to the correct dir
   ansible.builtin.template:
