@@ -24,8 +24,4 @@
   notify:
     - i3_reload
 
-- name: copy the rofi config file to the correct dir
-  ansible.builtin.copy:
-    src: "rofi.conf"
-    dest: "{{ (ansible_user_dir, i3_config_dir, 'rofi.conf') | path_join }}"
-    mode: u+r-wx
+- include_tasks: rofi.yml

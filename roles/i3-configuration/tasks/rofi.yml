@@ -1,0 +1,13 @@
+---
+- name: create the rofi conf dir
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, rofi_config_dir) | path_join }}"
+    state: directory
+    mode: '0755'
+
+- name: copy the rofi config file to the correct dir
+  ansible.builtin.template:
+    src: "rofi.conf"
+    dest: "{{ (ansible_user_dir, rofi_config_dir, 'config.rasi') | path_join }}"
+    mode: u+r-wx
+    validate: "rofi -rasi-validate %s"

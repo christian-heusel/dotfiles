@@ -3,3 +3,5 @@
 i3_config_dir: ".config/i3/"
 i3_default_terminal: "st"
 i3_default_screenshot: "shutter"
+
+rofi_config_dir: ".config/rofi/"
