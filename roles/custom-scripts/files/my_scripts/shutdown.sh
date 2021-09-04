@@ -1,4 +1,4 @@
 #!/bin/bash
 
 zenity --question --width="370" --height=20 --title "System Shutdown" --timeout=5 --text "You pressed the system shutdown shortcut. \nDo you want to proceed?" \
-    && shutdown 0
+    && sudo /sbin/shutdown 0

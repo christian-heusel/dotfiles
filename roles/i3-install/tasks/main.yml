@@ -43,15 +43,14 @@
   become: yes
 
 - name: allow the me to execute sudo
-  lineinfile:
+  ansible.builtin.blockinfile:
     path: /etc/sudoers.d/00-sudo
-    line: "{{ item }}"
+    block: |
+       %wheel ALL=(ALL) ALL
+       %wheel ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown
     create: yes
     validate: 'visudo -cf %s'
   become: yes
-  with_items:
-    - "%wheel ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot, /sbin/shutdown"
-    - "%wheel ALL=(ALL) ALL"
 
 - name: disable action on lid close
   lineinfile:
