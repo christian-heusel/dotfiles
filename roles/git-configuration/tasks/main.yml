@@ -9,3 +9,15 @@
   with_items:
     - "gitignore"
     - "gitconfig"
+
+- name: create the gh conf dir
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, gh_config_dir) | path_join }}"
+    state: directory
+    mode: '0755'
+
+- name: copy the gh config file to the correct dir
+  ansible.builtin.copy:
+    src: "gh_config.yml"
+    dest: "{{ (ansible_user_dir, gh_config_dir, 'config.yml') | path_join }}"
+    mode: u+r-wx
