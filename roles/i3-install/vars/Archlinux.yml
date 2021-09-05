@@ -10,6 +10,7 @@ base_packages:
   - bat
   - bpython
   - cgdb
+  - clang
   - cmake
   - cups
   - cups-pdf
