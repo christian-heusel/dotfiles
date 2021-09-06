@@ -97,5 +97,5 @@ alias gh='GH_TOKEN=$(gopass show --password "misc/github-token") gh'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 # export GPG_TTY=$(tty) 
 
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin:$(go env GOPATH)/bin
 export ANSIBLE_NOCOWS=1
