@@ -3,7 +3,7 @@
 gopass_config_dir: ".config/gopass"
 default_store:
   path: "/home/chris/.password-store"
-  git_url: "git@gitlab.com:TheEbolaDoc/gopass_git.git"
+  git_url: "git@git.heusel.eu:chris/gopass_git.git"
 other_mounts:
   - name: "MathI"
     path: "/home/chris/.password-store-MathI"
