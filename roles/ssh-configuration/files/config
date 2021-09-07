@@ -8,6 +8,12 @@ Host github.com
     User git
     AddKeysToAgent yes
 
+Host git.heusel.eu
+    Hostname git.heusel.eu
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User git
+    AddKeysToAgent yes
+
 Host gitlab.com
     Hostname gitlab.com
     IdentityFile ~/.ssh/theeboladoc@gitlab.com
