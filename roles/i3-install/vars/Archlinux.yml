@@ -33,6 +33,7 @@ base_packages:
   - htop
   - hugo
   - iotop
+  - jq
   - libmtp
   - linux
   - linux-firmware
@@ -40,6 +41,7 @@ base_packages:
   - man-db
   - mlocate
   - moreutils
+  - mtr
   - nano
   - ncdu
   - neofetch
