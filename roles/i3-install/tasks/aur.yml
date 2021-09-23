@@ -19,7 +19,7 @@
   become: yes
 
 - name: install the packages from AUR
-  aur:
+  kewlfft.aur.aur:
     name: "{{ package }}"
     use: makepkg
     state: present
