@@ -1,0 +1,47 @@
+---
+i3_default_terminal: "st"
+i3_default_screenshot: "shutter"
+i3_screen_config: |
+  # my current setup
+  set $leftMonitor DVI-D-0
+  set $middleMonitor DP-0
+  set $rightMonitor DP-2
+
+  # setting variables for later use
+  # use xrandr and/or arandr to know the names of your monitors
+  # use this line to tell which monitor is on the right
+  exec xrandr --output $middleMonitor --mode 1920x1080 --primary \
+              --output $rightMonitor --mode 1920x1080 --right-of $middleMonitor \
+              --output $leftMonitor --mode 1920x1080 --left-of $middleMonitor
+
+  workspace 1 output $leftMonitor
+  workspace 2 output $leftMonitor
+
+  workspace 3 output $middleMonitor
+  workspace 4 output $middleMonitor
+  workspace 5 output $middleMonitor
+  workspace 6 output $middleMonitor
+  workspace 7 output $middleMonitor
+
+  workspace 8  output $rightMonitor
+  workspace 9  output $rightMonitor
+  workspace 10 output $rightMonitor
+  workspace 11 output $rightMonitor
+  workspace 12 output $rightMonitor
+  workspace 13 output $rightMonitor
+  workspace 14 output $rightMonitor
+
+i3_user_applications:
+  - "exec telegram-desktop"
+  - "exec signal-desktop"
+  - "exec zoiper5"
+  - "exec element-desktop"
+  - "exec slack"
+  - "exec firefox"
+  - "exec thunderbird"
+  - "exec --no-startup-id spotify"
+  - "exec --no-startup-id discord --disable-sandbox"
+  - "exec_always picom # --config ~/.config/i3/compton.conf"
+  - "exec owncloud"
+  - "exec nextcloud --background"
+  - "exec seafile-applet"
