@@ -41,7 +41,6 @@ i3_user_applications:
   - "exec thunderbird"
   - "exec --no-startup-id spotify"
   - "exec --no-startup-id discord --disable-sandbox"
-  - "exec_always picom # --config ~/.config/i3/compton.conf"
   - "exec owncloud"
   - "exec nextcloud --background"
   - "exec seafile-applet"
