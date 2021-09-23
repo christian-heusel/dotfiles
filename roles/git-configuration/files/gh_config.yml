@@ -11,7 +11,7 @@ editor: !!null nvim
 prompt: enabled
 # A pager program to send command output to, e.g. "less".
 # Set the value to "cat" to disable the pager.
-pager:
+pager: cat
 # Aliases allow you to create nicknames for gh commands
 aliases:
     co: pr checkout
