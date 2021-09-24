@@ -21,6 +21,7 @@ ZSH_THEME="{{ zsh_theme }}"
 plugins=(
   git
   ssh-agent
+  fzf
 {% for plugin in extra_plugins %}
   {{ plugin.name }}
 {% endfor %}
