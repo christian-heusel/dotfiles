@@ -65,3 +65,9 @@
     name: pcspkr
     state: present
   become: yes
+
+- name: enable time synchronization
+  ansible.builtin.systemd:
+    name: systemd-timesyncd
+    enabled: yes
+  become: yes
