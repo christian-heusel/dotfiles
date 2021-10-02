@@ -2,7 +2,7 @@
 Description=Start the robustirc bridge
 
 [Service]
-ExecStart={{ gopath_cmd.stdout }}/bin/robustirc-bridge
+ExecStart={{ gopath_cmd.stdout }}/bin/robustirc-bridge -network=robustirc.net
 
 [Install]
 WantedBy=default.target
