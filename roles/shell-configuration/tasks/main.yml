@@ -29,3 +29,15 @@
     dest: "{{ (ansible_user_dir, '.oh-my-zsh/custom/plugins',  item.name ) | path_join }}"
     update: false
   with_items: "{{ extra_plugins }}"
+
+- name: create the terminator config dir
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, terminator_config_dir, 'config') | path_join }}"
+    state: directory
+    mode: '0755'
+
+- name: copy the terminator config file to the correct dir
+  ansible.builtin.copy:
+    src: "terminator_config"
+    dest: "{{ (ansible_user_dir, terminator_config_dir, 'config') | path_join }}"
+    mode: u+r-wx

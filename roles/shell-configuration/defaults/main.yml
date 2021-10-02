@@ -1,6 +1,7 @@
 ---
 # defaults file for shell-configuration
 zsh_theme: lukerandall
+terminator_config_dir: "~/.config/terminator"
 extra_plugins:
   - name: "zsh-autosuggestions"
     git_url: "https://github.com/zsh-users/zsh-autosuggestions"
