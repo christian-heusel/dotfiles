@@ -1,0 +1,18 @@
+---
+# tasks file for irc-configuration
+
+- name: create config directory for weechat
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, weechat_config_dir) | path_join }}"
+    state: directory
+    mode: '0755'
+
+- name: copy the weechat config files
+  copy:
+    # the trailing slash ensures that all the folder content
+    # and not the folder itself is copied!
+    src: weechat/
+    dest: "{{ (ansible_user_dir, weechat_config_dir) | path_join }}"
+    mode: u+rw
+
+- include_tasks: robustirc.yml

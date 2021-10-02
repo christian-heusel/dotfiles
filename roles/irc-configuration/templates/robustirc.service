@@ -1,0 +1,8 @@
+[Unit]
+Description=Start the robustirc bridge
+
+[Service]
+ExecStart={{ gopath_cmd.stdout }}/bin/robustirc-bridge
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,3 @@
+---
+# defaults file for irc-configuration
+weechat_config_dir: ".config/weechat/"

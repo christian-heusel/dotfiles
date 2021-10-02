@@ -1,6 +1,6 @@
 ---
 
-- name: create directory for the scripts
+- name: create the systemd-user dir
   ansible.builtin.file:
     path: "{{ (ansible_user_dir, '.config/systemd/user') | path_join }}"
     state: directory
