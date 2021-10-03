@@ -32,7 +32,7 @@
 
 - name: create the terminator config dir
   ansible.builtin.file:
-    path: "{{ (ansible_user_dir, terminator_config_dir, 'config') | path_join }}"
+    path: "{{ (ansible_user_dir, terminator_config_dir) | path_join }}"
     state: directory
     mode: '0755'
 
