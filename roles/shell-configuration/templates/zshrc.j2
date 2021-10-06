@@ -87,12 +87,12 @@ alias lif="~/.config/i3/my_scripts/lineinfile.sh"
 alias protokoll="~/.config/i3/my_scripts/protokoll.sh"
 alias vimdiff="nvim -d"
 alias gparted='gksu -u root -m "root authentication is required to use gparted" "gparted"'
-alias bat='batcat'
 alias flutter='{{ sdk_path }}/flutter-sdk/bin/flutter'
 alias yapf='yapf3'
 alias spack_env='source {{ sdk_path }}/spack/share/spack/setup-env.sh'
 alias signoff='ARCHWEB_USERNAME="gromit" ARCHWEB_PASSWORD=$(gopass show --password websites/www.archlinux.org/gromit) signoff'
 alias gh='GH_TOKEN=$(gopass show --password "misc/github-token") gh'
+{{ 'alias bat=\'batcat\'' if ansible_distribution == 'Debian' }}
 
 # color for zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
