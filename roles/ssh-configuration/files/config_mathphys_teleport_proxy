@@ -1,9 +1,15 @@
-Host mathphysinfo-teleport-proxy
-    HostName apple.dmath.uni-heidelberg.de
-    Port 3023
+#
+# Begin generated Teleport configuration for apple.dmath.uni-heidelberg.de:3080 from `tsh config`
+# tsh --proxy=apple.dmath.uni-heidelberg.de config
+#
 
-Host *.dmath.uni-heidelberg.de
-    HostName %h
+# Common flags for all MathPhysInfo hosts
+Host *.MathPhysInfo apple.dmath.uni-heidelberg.de
+    UserKnownHostsFile "/home/chris/.tsh/known_hosts"
+
+# Flags for all MathPhysInfo hosts except the proxy
+Host *.MathPhysInfo !apple.dmath.uni-heidelberg.de
     Port 3022
-    User root
-    ProxyCommand ssh -p 3023 %r@mathphysinfo-teleport-proxy -s proxy:%h:%p
+    ProxyCommand ssh -p 3023 apple.dmath.uni-heidelberg.de -s proxy:$(echo %h | cut -d '.' -f 1):%p
+
+# End generated Teleport configuration
