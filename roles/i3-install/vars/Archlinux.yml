@@ -178,14 +178,14 @@ aur_packages:
   - scrcpy
   - screenkey-git
   - seafile-client
+  - siji-git
   - skypeforlinux-preview-bin
   - slack-desktop
   - spotify
-  - teleport
+  - teleport-bin
+  - ttf-unifont
   - v4l2loopback-dkms-git
   - webex-bin
   - xcowsay
   - yay
   - zoom
-  - ttf-unifont
-  - siji-git
