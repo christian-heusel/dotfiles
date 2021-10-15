@@ -101,9 +101,9 @@ desktop_packages:
   - evince
   - file-roller
   - firefox
-  - github-cli
   - gimp
   - gimp-nufraw
+  - github-cli
   - gopass
   - gopass-jsonapi
   - gparted
@@ -122,6 +122,7 @@ desktop_packages:
   - telegram-desktop
   - terminator
   - thunderbird
+  - ttf-hack
   - virt-manager
   - vlc
   - weechat
