@@ -5,10 +5,6 @@ default_store:
   path: "/home/chris/.password-store"
   git_url: "git@git.heusel.eu:chris/gopass_git.git"
 other_mounts:
-  - name: "MathI"
-    path: "/home/chris/.password-store-MathI"
-    git_url: "git@git.mathi.uni-heidelberg.de:Systemadministration_Mathi/gopass.git"
-
   - name: "MathPhysInfo"
     path: "/home/chris/.password-store-MathPhysInfo"
     git_url: "git@gitlab.com:fs-root/mathphysinfo_gopass.git"
