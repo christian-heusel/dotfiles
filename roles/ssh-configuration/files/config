@@ -26,9 +26,9 @@ Host parcomp-git.iwr.uni-heidelberg.de
     User git
     AddKeysToAgent yes
 
-Host creek
-    Hostname ceg-creek.ziti.uni-heidelberg.de
-    User gpucomp02
+Host ziti-cluster
+    Hostname ceg-octane.ziti.uni-heidelberg.de
+    User gpucomp05
     IdentityFile ~/.ssh/id_rsa
 
 Host cuda
