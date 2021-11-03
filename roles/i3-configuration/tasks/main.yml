@@ -24,4 +24,10 @@
   notify:
     - i3_reload
 
+- name: copy the i3 config file to the correct dir
+  ansible.builtin.copy:
+    src: "picom.conf"
+    dest: "{{ (ansible_user_dir, i3_config_dir, 'picom.conf') | path_join }}"
+    mode: u+r-wx
+
 - include_tasks: rofi.yml

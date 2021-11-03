@@ -187,6 +187,9 @@ exec variety
 # clipit
 #exec clipit
 
+# picom for transparency
+exec picom --config {{ (ansible_user_dir, i3_config_dir, 'picom.conf') | path_join }}
+
 
 # USER APPLICATIONS
 
