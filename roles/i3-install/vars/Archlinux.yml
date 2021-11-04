@@ -165,6 +165,7 @@ i3_packages:
   - variety
   - w3m
   - x11-ssh-askpass
+  - xdo
   - xorg-fonts-misc
   - zenity
 
