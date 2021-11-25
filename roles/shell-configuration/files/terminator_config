@@ -4,6 +4,35 @@
   suppress_multiple_term_dialog = True
   title_font = Cassandra Personal Use 9
 [keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.86
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Hack 11
+    foreground_color = "#f3f3f3"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 2000
+    scrollback_infinite = True
+    use_system_font = False
+  [[darker]]
+    background_darkness = 0.85
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Hack 11
+    foreground_color = "#d3dae3"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 2000
+    use_system_font = False
+  [[beamer]]
+    cursor_color = "#aaaaaa"
+    font = Source Code Pro 16
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    use_system_font = False
 [layouts]
   [[default]]
     [[[child1]]]
@@ -13,25 +42,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    background_darkness = 0.86
-    background_type = transparent
-    cursor_color = "#aaaaaa"
-    font = Hack 11
-    foreground_color = "#f3f3f3"
-    scrollback_infinite = True
-    scrollback_lines = 2000
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
-  [[darker]]
-    background_darkness = 0.85
-    background_type = transparent
-    cursor_color = "#aaaaaa"
-    font = Hack 11
-    foreground_color = "#d3dae3"
-    scrollback_lines = 2000
-    scrollbar_position = hidden
-    show_titlebar = False
-    use_system_font = False
