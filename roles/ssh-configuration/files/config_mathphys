@@ -21,11 +21,11 @@ Host mathphys.old
     Port 22
     IdentityFile /home/chris/Documents/Fachschaft/root/ssh-keys/chris_fachschaft
 
-Host cherry.dmath.uni-heidelberg.de
-    HostName cherry.dmath.uni-heidelberg.de
-    User root
-    IdentityFile ~/.ssh/chris_fachschaft
-    AddKeysToAgent yes
+# Host cherry.dmath.uni-heidelberg.de
+#     HostName cherry.dmath.uni-heidelberg.de
+#     User root
+#     IdentityFile ~/.ssh/chris_fachschaft
+#     AddKeysToAgent yes
 
 Host sven
     Hostname sven.mathphys
