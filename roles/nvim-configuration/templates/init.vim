@@ -12,7 +12,7 @@ source {{ (ansible_user_dir, nvim_config_dir, nvim_plugin_file) | path_join }}
 :set number
 :set relativenumber
 :set clipboard=unnamedplus
-:set nowrap
+:set linebreak wrap
 :set fixendofline
 :let mapleader='ö'
 :let maplocalleader='ö'
@@ -96,7 +96,7 @@ let g:ale_cpp_clangtidy_extra_options = "-extra-arg=-std=c++20"
 let g:ale_linters = {
 \     'cpp': ['clangtidy'],
 \}
-let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 0
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
