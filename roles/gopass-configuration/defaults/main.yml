@@ -8,3 +8,6 @@ other_mounts:
   - name: "MathPhysInfo"
     path: "/home/chris/.password-store-MathPhysInfo"
     git_url: "git@gitlab.com:fs-root/mathphysinfo_gopass.git"
+  - name: "heuselfamily"
+    path: "/home/chris/.password-store-heuselfamily"
+    git_url: "git@git.heusel.eu:Family/gopass_family.git"
