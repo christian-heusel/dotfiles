@@ -13,7 +13,7 @@ Host *.dmath.uni-heidelberg.de apple.dmath.uni-heidelberg.de
 # Flags for all MathPhysInfo hosts except the proxy
 Host *.dmath.uni-heidelberg.de !apple.dmath.uni-heidelberg.de
     Port 3022
-    ProxyCommand "/usr/bin/tsh" config-proxy --login="%r" --proxy=apple.dmath.uni-heidelberg.de:3023 %h:%p "MathPhysInfo"
+    ProxyCommand "tsh" config-proxy --login="%r" --proxy=apple.dmath.uni-heidelberg.de:3023 %h:%p "MathPhysInfo"
     HostkeyAlgorithms +ssh-rsa-cert-v01@openssh.com
     PubkeyAcceptedAlgorithms +ssh-rsa-cert-v01@openssh.com
 
