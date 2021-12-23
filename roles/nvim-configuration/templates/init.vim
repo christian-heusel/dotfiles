@@ -161,9 +161,9 @@ let g:UltiSnipsEditSplit="vertical"
 " let g:fzf_layout = { 'window': { 'width': 0.8, 'height': 0.8 } }
 let $FZF_DEFAULT_OPTS='--reverse'
 
-nnoremap <leader>gs :tab G<Enter><Esc>
-nnoremap <leader>gd :G diff<Enter><Esc>
-nnoremap <leader>gp :G push<Enter><Esc>
+nnoremap <leader>gs :tab G<CR>
+nnoremap <leader>gd :G diff<CR>
+nnoremap <leader>gp :G push<CR>
 nnoremap <leader>gc :GCheckout<CR>
 
 autocmd FileType gitcommit set completefunc=emoji#complete
