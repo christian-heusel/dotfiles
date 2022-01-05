@@ -9,7 +9,7 @@
     background_darkness = 0.86
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Hack 11
+    font = Go Mono 11
     foreground_color = "#f3f3f3"
     show_titlebar = False
     scrollbar_position = hidden
@@ -20,7 +20,7 @@
     background_darkness = 0.85
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Hack 11
+    font = Go Mono 11
     foreground_color = "#d3dae3"
     show_titlebar = False
     scrollbar_position = hidden
@@ -28,7 +28,7 @@
     use_system_font = False
   [[beamer]]
     cursor_color = "#aaaaaa"
-    font = Source Code Pro 16
+    font = Go Mono 16
     show_titlebar = False
     scrollbar_position = hidden
     scrollback_infinite = True
