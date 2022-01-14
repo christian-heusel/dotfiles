@@ -40,3 +40,4 @@ nvim_plugins:
   - name: 'stsewd/fzf-checkout.vim'
   - name: 'junegunn/vim-emoji'
   - name: 'https://github.com/triglav/vim-visual-increment.git'
+  - name: 'Yggdroot/indentLine'
