@@ -185,6 +185,7 @@ aur_packages:
   - slack-desktop
   - spotify
   - teleport-bin
+  - ttf-go-mono-git
   - ttf-unifont
   - v4l2loopback-dkms-git
   - webex-bin
