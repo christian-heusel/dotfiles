@@ -1,5 +1,4 @@
 ---
-i3_default_terminal: "st"
 i3_default_screenshot: "shutter"
 i3_screen_config: |
   # my current setup

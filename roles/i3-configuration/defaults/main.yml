@@ -1,7 +1,7 @@
 ---
 # defaults file for i3-configuration
 i3_config_dir: ".config/i3/"
-i3_default_terminal: "st"
+i3_default_terminal: "st -f 'Go Mono:style=Regular:pixelsize=15'"
 i3_default_screenshot: "shutter"
 
 rofi_config_dir: ".config/rofi/"
