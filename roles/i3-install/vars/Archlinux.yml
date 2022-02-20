@@ -92,6 +92,7 @@ base_packages:
 desktop_packages:
   - archlinux-wallpaper
   - audacity
+  - brightnessctl
   - code
   - deepin-community-wallpapers
   - deepin-wallpapers
@@ -129,7 +130,6 @@ desktop_packages:
   - xclip
   - xdotool
   - xorg-server
-  - xorg-xbacklight
   - xorg-xrandr
   - xsel
   - yubikey-manager
