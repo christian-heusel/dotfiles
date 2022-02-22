@@ -188,7 +188,6 @@ aur_packages:
   - ttf-go-mono-git
   - ttf-unifont
   - v4l2loopback-dkms-git
-  - webex-bin
   - xcowsay
   - yay
   - zoom
