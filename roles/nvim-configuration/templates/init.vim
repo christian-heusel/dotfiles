@@ -163,7 +163,7 @@ let $FZF_DEFAULT_OPTS='--reverse'
 
 nnoremap <leader>gs :tab G<CR>
 nnoremap <leader>gd :G diff<CR>
-nnoremap <leader>gp :G push<CR>
+nnoremap <leader>gp :G -c push.default=current push<CR>
 nnoremap <leader>gc :GCheckout<CR>
 
 autocmd FileType gitcommit set completefunc=emoji#complete
