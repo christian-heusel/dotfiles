@@ -29,7 +29,6 @@ nvim_plugins:
   - name: 'lepture/vim-jinja'
   - name: 'tpope/vim-obsession'
   - name: 'tpope/vim-commentary'
-  - name: 'xolox/vim-notes'
   - name: 'jiangmiao/auto-pairs'
   - name: 'xolox/vim-misc'
   - name: 'tpope/vim-fugitive'
