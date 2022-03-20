@@ -10,8 +10,8 @@ i3_screen_config: |
   # use xrandr and/or arandr to know the names of your monitors
   # use this line to tell which monitor is on the right
   exec xrandr --output $middleMonitor --mode 1920x1080 --primary \
-              --output $rightMonitor --mode 1920x1080 --right-of $middleMonitor \
-              --output $leftMonitor --mode 1920x1080 --left-of $middleMonitor
+              --output $rightMonitor  --mode 1920x1080 --right-of $middleMonitor \
+              --output $leftMonitor   --mode 1920x1080 --left-of  $middleMonitor
 
   workspace 1 output $leftMonitor
   workspace 2 output $leftMonitor
@@ -49,12 +49,8 @@ i3_screen_config: |
 i3_user_applications:
   - "exec telegram-desktop"
   - "exec signal-desktop"
-  - "exec zoiper5"
-  - "exec element-desktop"
-  - "exec slack"
   - "exec firefox"
   - "exec thunderbird"
-  - "exec --no-startup-id spotify"
   - "exec --no-startup-id discord --disable-sandbox"
   - "exec owncloud"
   - "exec nextcloud --background"
