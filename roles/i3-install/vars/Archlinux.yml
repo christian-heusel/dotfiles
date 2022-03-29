@@ -20,8 +20,8 @@ base_packages:
   - exfat-utils
   - file
   - findutils
-  - fzf
   - fwupd
+  - fzf
   - gcc
   - gcc-fortran
   - gdb
@@ -85,7 +85,7 @@ base_packages:
   - whois
   - yamllint
   - yapf
-  - youtube-dl
+  - yt-dlp
   - zbar
   - zsh
 
