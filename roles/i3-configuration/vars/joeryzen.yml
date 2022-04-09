@@ -27,12 +27,11 @@ i3_screen_config: |
   workspace 12 output $secondMonitor
   workspace 13 output $secondMonitor
   workspace 14 output $secondMonitor
+
 i3_user_applications:
   - "exec telegram-desktop"
   - "exec signal-desktop"
   - "exec zoiper5"
-  - "exec element-desktop"
-  - "exec slack"
   - "exec firefox"
   - "exec thunderbird"
   - "exec --no-startup-id spotify"
