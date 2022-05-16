@@ -170,6 +170,7 @@ i3_packages:
   - zenity
 
 aur_packages:
+  - activate-linux
   - chkrootkit
   - dcfldd
   - google-chrome

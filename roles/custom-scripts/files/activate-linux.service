@@ -1,0 +1,9 @@
+[Unit]
+Description=Setup the April fools joke
+
+[Service]
+Type=oneshot
+# https://github.com/MrGlockenspiel/activate-linux
+ExecStart=/bin/activate-linux
+Restart=on-failure
+RestartSec=5s

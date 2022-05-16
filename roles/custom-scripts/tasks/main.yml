@@ -15,4 +15,11 @@
     dest: "{{ (ansible_user_dir, script_dir) | path_join }}"
     mode: u+rx-w
 
+- name: create the systemd-user dir
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, '.config/systemd/user') | path_join }}"
+    state: directory
+    mode: '0700'
+
 - include_tasks: autoupdate_dotfiles.yml
+- include_tasks: april_fools.yml

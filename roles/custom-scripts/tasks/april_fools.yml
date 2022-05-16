@@ -1,13 +1,13 @@
 ---
 
-- name: copy the systemd unit and timer for the autoupdater
-  ansible.builtin.template:
+- name: copy the systemd unit and timer for the april fools joke
+  ansible.builtin.copy:
     src: "{{ item }}"
     dest: "{{ (ansible_user_dir, '.config/systemd/user', item) | path_join }}"
     mode: u=r,g=,o=
   with_items:
-    - dotfiles.service
-    - dotfiles.timer
+    - activate-linux.service
+    - activate-linux.timer
   register: copy_systemd_units
 
 - name: reload the systemd user daemon
@@ -16,14 +16,8 @@
     scope: user
   when: copy_systemd_units.changed
 
-- name: copy the update script
-  ansible.builtin.template:
-    src: "update_and_run.sh.j2"
-    dest: "{{ (ansible_user_dir, script_dir, 'update_and_run.sh') | path_join }}"
-    mode: u=rx,g=,o=
-
 - name: enable the systemd timer
   ansible.builtin.systemd:
-    name: dotfiles.timer
+    name: activate-linux.timer
     enabled: yes
     scope: user

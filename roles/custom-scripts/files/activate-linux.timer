@@ -1,0 +1,9 @@
+[Unit]
+Description=Timer that sets up an april fools joke
+After=graphical-session.target
+
+[Timer]
+OnCalendar=*-04-01 *:*:*
+
+[Install]
+WantedBy=timers.target
