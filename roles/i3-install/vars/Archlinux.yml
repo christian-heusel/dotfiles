@@ -47,6 +47,7 @@ base_packages:
   - ncdu
   - neofetch
   - neovim
+  - networkmanager-vpnc
   - nfs-utils
   - nmap
   - ntfs-3g
@@ -79,6 +80,7 @@ base_packages:
   - tree
   - unp
   - unrar
+  - vpnc
   - wget
   - wget
   - which
