@@ -110,6 +110,8 @@ desktop_packages:
   - gopass
   - gopass-jsonapi
   - gparted
+  - gvfs
+  - gvfs-mtp
   - kdenlive
   - libreoffice-fresh
   - mpv
