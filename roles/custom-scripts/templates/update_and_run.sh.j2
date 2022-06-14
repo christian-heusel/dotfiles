@@ -31,8 +31,7 @@ check_error () {
     fi
 }
 
-# TODO(chris): use $XDG_STATE_HOME once #23 is fixed
-state_file=$HOME/.local/state/dotfiles_last_run_commit
+state_file=$XDG_STATE_HOME/dotfiles_last_run_commit
 
 cd {{ playbook_dir }}
 git pull --autostash
