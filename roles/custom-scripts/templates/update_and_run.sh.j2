@@ -7,7 +7,7 @@
 #
 #   DESCRIPTION: Pulls and runs my dotfile configuration
 #
-#  REQUIREMENTS: git, ansible-playbook, moreutils
+#  REQUIREMENTS: git, ansible-playbook, moreutils, zenity
 #        AUTHOR: Christian Heusel (christian@heusel.eu)
 #       CREATED: 08/12/2021 11:40
 #
@@ -23,18 +23,32 @@ check_error () {
     if [ $1 -eq 0 ]; then
         echo OK
     else
-        error_text=$(echo "There was an error executing \"${@:2}\"")
+        error_text="There was an error executing \"${@:2}\""
+        echo $error_text
         zenity --error --width="500" --height=20 --timeout=5 \
                --text "$error_text" --title "$0"
+        exit 1
     fi
 }
 
+# TODO(chris): use $XDG_STATE_HOME once #23 is fixed
+state_file=$HOME/.local/state/dotfiles_last_run_commit
 
 cd {{ playbook_dir }}
 git pull --autostash
-
 check_error $? !!
 
-chronic -v ansible-playbook 01_configure.yml
+current_commit_sha=$(git rev-parse HEAD)
+previous_commit_sha=$(cat $state_file | head -1)
 
-check_error $? !!
+
+if [[ "$current_commit_sha" != "$previous_commit_sha" ]]; then
+    chronic -v ansible-playbook 01_configure.yml
+    check_error $? !!
+
+    # we did a successfull run and can therefore save the new commit sha
+    echo "$current_commit_sha" > $state_file
+    echo "Last dotfile update was run on $(date)" >> $state_file
+else
+    echo "Not running since there are no new updates (SHA: $current_commit_sha)"
+fi
