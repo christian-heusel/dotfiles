@@ -90,6 +90,7 @@ base_packages:
   - yt-dlp
   - zbar
   - zsh
+  - zsh-syntax-highlighting
 
 desktop_packages:
   - archlinux-wallpaper
