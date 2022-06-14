@@ -71,3 +71,10 @@
     name: systemd-timesyncd
     enabled: yes
   become: yes
+
+- name: persist the XDG_DIRS
+  lineinfile:
+    path: /etc/security/pam_env.conf
+    line: "{{ item.key }}\tDEFAULT=@{HOME}/{{ item.value }}"
+  with_dict: "{{ xdg_base_dirs }}"
+  become: yes
