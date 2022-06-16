@@ -5,3 +5,5 @@ terminator_config_dir: ".config/terminator"
 extra_plugins:
   - name: "zsh-autosuggestions"
     git_url: "https://github.com/zsh-users/zsh-autosuggestions"
+
+zsh_syntax_highlighting_path: "/usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
