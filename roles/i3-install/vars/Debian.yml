@@ -1,7 +1,7 @@
 ---
 # vars file for i3-install
 
-greeter_unit_name: sddm.service
+greeter_unit_name: gdm.service
 
 base_packages:
   - ansible
@@ -15,7 +15,7 @@ base_packages:
   - curl
   - docker
   - docker-compose
-  - exfat-utils
+  - exfatprogs
   - file
   - findutils
   - fwupd
@@ -41,7 +41,7 @@ base_packages:
   - ncdu
   - neofetch
   - neovim
-  - netcat
+  - netcat-traditional
   - nmap
   - ntfs-3g
   - openssh-client
@@ -55,8 +55,8 @@ base_packages:
   - python3-pip
   - qemu
   - qrencode
-  - r-base
   - ranger
+  - r-base
   - ripgrep
   - ripgrep
   - rkhunter
@@ -78,6 +78,7 @@ base_packages:
   - youtube-dl
   - zbar-tools
   - zsh
+  - zsh-syntax-highlighting
 
 desktop_packages:
   - audacity
