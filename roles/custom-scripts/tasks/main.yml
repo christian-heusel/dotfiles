@@ -23,7 +23,7 @@
 
 - name: create the xdg dir for the scripts
   ansible.builtin.file:
-    path: "{{ (ansible_user_dir, item.key) | path_join }}"
+    path: "{{ (ansible_user_dir, item.value) | path_join }}"
     state: directory
     mode: '0700'
   with_dict: "{{ xdg_base_dirs }}"
