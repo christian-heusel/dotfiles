@@ -100,8 +100,8 @@ desktop_packages:
   - deepin-community-wallpapers
   - deepin-wallpapers
   - discord
-  - element-desktop
   - elementary-wallpapers
+  - element-desktop
   - evince
   - file-roller
   - firefox
@@ -121,6 +121,7 @@ desktop_packages:
   - owncloud-client
   - pdfpc
   - qutebrowser
+  - scrcpy
   - screenfetch
   - shutter
   - signal-desktop
@@ -183,7 +184,6 @@ aur_packages:
   - ly
   - polybar-git
   - rpiplay-git
-  - scrcpy
   - screenkey-git
   - seafile-client
   - siji-git

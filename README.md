@@ -3,11 +3,11 @@
 This is not really meant to be used by other people (atleast directly), but feel free to look into my ansible playbooks and roles!
 
 ## Notes for future me
-We work on a basic install of ArchLinux so far 😊 
+We work on a basic install of ArchLinux so far 😊 Debian Testing should work aswell, but thats not as heavily tested ...
 
 0. Install the dependent AUR role
    ```cmd
-   # ansible-galaxy install --role-file=requirements.yml
+   # ansible-galaxy install -r requirements.yml
    ```
 1. refresh the mirrors (and update):
    ```cmd
