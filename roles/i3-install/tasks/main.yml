@@ -78,3 +78,10 @@
     line: "{{ item.key }}\tDEFAULT=@{HOME}/{{ item.value }}"
   with_dict: "{{ xdg_base_dirs }}"
   become: yes
+
+- name: persist the other env vars
+  lineinfile:
+    path: /etc/security/pam_env.conf
+    line: "{{ item.key }}\tDEFAULT={{ item.value }}"
+  with_dict: "{{ environment_variables }}"
+  become: yes

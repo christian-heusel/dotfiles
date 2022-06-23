@@ -14,3 +14,5 @@ xdg_base_dirs:
   - XDG_CACHE_HOME: .cache
   - XDG_DATA_HOME: .local/share
   - XDG_STATE_HOME: .local/state
+environment_variables:
+  - XDG_CURRENT_DESKTOP: i3
