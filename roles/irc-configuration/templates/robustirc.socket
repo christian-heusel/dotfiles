@@ -1,0 +1,10 @@
+# taken from https://github.com/robustirc/bridge/blob/master/robustirc-bridge%40.socket
+[Unit]
+Description=robustirc-bridge
+PartOf=robustirc.service
+
+[Socket]
+ListenStream=127.0.0.1:6667
+
+[Install]
+WantedBy=sockets.target
