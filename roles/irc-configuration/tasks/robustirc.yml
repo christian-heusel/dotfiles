@@ -11,9 +11,12 @@
 
 - name: copy the systemd unit for robustirc
   ansible.builtin.template:
-    src: "robustirc.service"
-    dest: "{{ (ansible_user_dir, '.config/systemd/user', 'robustirc.service') | path_join }}"
+    src: "{{ item }}"
+    dest: "{{ (ansible_user_dir, '.config/systemd/user', item) | path_join }}"
     mode: u=r
+  with_items:
+    - 'robustirc.service'
+    - 'robustirc.socket'
   register: copy_robustirc_systemd_unit
 
 - name: reload the systemd user daemon
@@ -24,6 +27,7 @@
 
 - name: enable the unit for robustic
   ansible.builtin.systemd:
-    name: robustirc.service
+    name: robustirc.socket
     enabled: yes
+    state: started
     scope: user

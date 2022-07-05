@@ -1,8 +1,15 @@
+# taken from: https://github.com/robustirc/bridge/blob/master/robustirc-bridge.service
 [Unit]
-Description=Start the robustirc bridge
+Description=RobustIRC bridge
+Documentation=http://robustirc.net/
 
 [Service]
-ExecStart={{ gopath_cmd.stdout }}/bin/robustirc-bridge -network=robustirc.net
+Restart=on-failure
+# By default, the RobustIRC bridge is started in SOCKS proxy mode only.
+# Enable robustirc-bridge@.service with the network name for IRC listening
+# mode, e.g. systemctl enable --now robustirc-bridge@robustirc.net.service
+# ExecStart=/usr/bin/robustirc-bridge -socks=localhost:1080 -listen=
+ExecStart={{ gopath_cmd.stdout }}/bin/robustirc-bridge -network=robustirc.net -socks= -listen=
 
 [Install]
 WantedBy=default.target
