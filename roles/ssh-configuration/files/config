@@ -26,38 +26,15 @@ Host parcomp-git.iwr.uni-heidelberg.de
     User git
     AddKeysToAgent yes
 
+Host cegit.ziti.uni-heidelberg.de
+    Hostname cegit.ziti.uni-heidelberg.de
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User git
+    AddKeysToAgent yes
+
 Host ziti-cluster
     Hostname ceg-octane.ziti.uni-heidelberg.de
     User gpucomp05
-    IdentityFile ~/.ssh/id_rsa
-
-Host cuda
-    Hostname localhost
-    User chris
-    Port 19999
-    ProxyCommand ssh -q -W %h:%p mathphys
-
-Host scc
-    Hostname 129.206.10.224
-    User scc
-    IdentityFile ~/.ssh/id_rsa
-    ProxyCommand ssh -q -W %h:%p mathphys
-
-Host jimbo1
-    Hostname 192.168.56.101
-    User root
-    IdentityFile ~/.ssh/id_rsa
-    ProxyCommand ssh -q -W %h:%p scc
-
-Host jimbo2
-    Hostname 192.168.56.102
-    User root
-    IdentityFile ~/.ssh/id_rsa
-    ProxyCommand ssh -q -W %h:%p scc
-
-Host stickpi
-    Hostname stickpi.fritz.box
-    User chris
     IdentityFile ~/.ssh/id_rsa
 
 Host hetzner
