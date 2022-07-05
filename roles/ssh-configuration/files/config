@@ -28,7 +28,7 @@ Host parcomp-git.iwr.uni-heidelberg.de
 
 Host cegit.ziti.uni-heidelberg.de
     Hostname cegit.ziti.uni-heidelberg.de
-    IdentityFile ~/.ssh/christian@heusel.eu
+    IdentityFile ~/.ssh/cheusel@cegit.ziti.uni-heidelberg.de
     User git
     AddKeysToAgent yes
 
