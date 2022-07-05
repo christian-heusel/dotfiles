@@ -9,7 +9,7 @@ Restart=on-failure
 # Enable robustirc-bridge@.service with the network name for IRC listening
 # mode, e.g. systemctl enable --now robustirc-bridge@robustirc.net.service
 # ExecStart=/usr/bin/robustirc-bridge -socks=localhost:1080 -listen=
-ExecStart={{ gopath_cmd.stdout }}/bin/robustirc-bridge -network=robustirc.net -socks=localhost:1080 -listen=
+ExecStart={{ gopath_cmd.stdout }}/bin/robustirc-bridge -network=robustirc.net -socks= -listen=
 
 [Install]
 WantedBy=default.target
