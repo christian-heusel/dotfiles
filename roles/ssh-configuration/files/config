@@ -60,16 +60,6 @@ Host bwfor
     IdentityFile ~/.ssh/id_rsa
     ProxyJump grunthos
 
-Host xerophyte
-    # Hostname 129.206.27.61
-    Hostname xerophyte.dmath.uni-heidelberg.de
-    IdentityFile ~/.ssh/chris_fachschaft
-    User root
-    ProxyJump root@cherry.dmath.uni-heidelberg.de
-
-Host spinach.dmath.uni-heidelberg.de
-    # Hostname 129.206.27.61
-    Hostname spinach.dmath.uni-heidelberg.de
-    IdentityFile ~/.ssh/chris_fachschaft
-    User root
-    ProxyJump root@cherry.dmath.uni-heidelberg.de
+Host aur.archlinux.org
+  IdentityFile ~/.ssh/christian@heusel.eu
+  User aur
