@@ -32,12 +32,24 @@
 
 - name: create the terminator config dir
   ansible.builtin.file:
-    path: "{{ (ansible_user_dir, terminator_config_dir) | path_join }}"
+    path: "{{ (ansible_user_dir, xdg_base_dirs.XDG_CONFIG_HOME, 'terminator') | path_join }}"
     state: directory
     mode: '0755'
 
 - name: copy the terminator config file to the correct dir
   ansible.builtin.copy:
     src: "terminator_config"
-    dest: "{{ (ansible_user_dir, terminator_config_dir, 'config') | path_join }}"
+    dest: "{{ (ansible_user_dir, xdg_base_dirs.XDG_CONFIG_HOME, 'terminator', 'config') | path_join }}"
+    mode: u+r-wx
+
+- name: create the gdb config dir
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, xdg_base_dirs.XDG_CONFIG_HOME, 'gdb') | path_join }}"
+    state: directory
+    mode: '0755'
+
+- name: copy the gdb config file to the correct dir
+  ansible.builtin.copy:
+    src: "gdbinit"
+    dest: "{{ (ansible_user_dir, xdg_base_dirs.XDG_CONFIG_HOME, 'gdb', 'gdbinit') | path_join }}"
     mode: u+r-wx
