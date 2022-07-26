@@ -7,15 +7,11 @@ Host *.dmath.uni-heidelberg.de apple.dmath.uni-heidelberg.de
     UserKnownHostsFile "/home/chris/.tsh/known_hosts"
     IdentityFile "/home/chris/.tsh/keys/apple.dmath.uni-heidelberg.de/chris"
     CertificateFile "/home/chris/.tsh/keys/apple.dmath.uni-heidelberg.de/chris-ssh/MathPhysInfo-cert.pub"
-    HostkeyAlgorithms +ssh-rsa-cert-v01@openssh.com
-    PubkeyAcceptedAlgorithms +ssh-rsa-cert-v01@openssh.com
+    PubkeyAcceptedKeyTypes +ssh-rsa-cert-v01@openssh.com
 
 # Flags for all MathPhysInfo hosts except the proxy
 Host *.dmath.uni-heidelberg.de !apple.dmath.uni-heidelberg.de
     Port 3022
-    ProxyCommand "tsh" config-proxy --login="%r" --proxy=apple.dmath.uni-heidelberg.de:3023 %h:%p "MathPhysInfo"
-    HostkeyAlgorithms +ssh-rsa-cert-v01@openssh.com
-    PubkeyAcceptedAlgorithms +ssh-rsa-cert-v01@openssh.com
-
+    ProxyCommand "/usr/bin/tsh" proxy ssh --cluster=MathPhysInfo --proxy=apple.dmath.uni-heidelberg.de %r@%h:%p
 
 # End generated Teleport configuration
