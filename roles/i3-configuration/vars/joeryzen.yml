@@ -3,7 +3,7 @@ i3_default_terminal: "terminator"
 i3_default_screenshot: "spectacle"
 i3_screen_config: |
   # my current setup
-  set $firstMonitor DP-0.1.8
+  set $firstMonitor DP-0.1
   set $secondMonitor DP-0.8
 
   # setting variables for later use
