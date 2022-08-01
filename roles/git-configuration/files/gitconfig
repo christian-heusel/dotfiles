@@ -6,8 +6,8 @@
 [core]
     editor = nvim
     excludesFile = ~/.gitignore
-	quotePath = false
-	commitGraph = true
+    quotePath = false
+    commitGraph = true
 [merge]
     tool = nvim -d
 [gpg]
@@ -16,9 +16,11 @@
     gpgsign = true
 [pull]
     rebase = true
+[push]
+    default = current
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [receive]
-	advertisePushOptions = true
+    advertisePushOptions = true
 [gc]
-	writeCommitGraph = true
+    writeCommitGraph = true
