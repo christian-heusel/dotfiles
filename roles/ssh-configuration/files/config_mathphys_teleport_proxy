@@ -12,6 +12,6 @@ Host *.dmath.uni-heidelberg.de apple.dmath.uni-heidelberg.de
 # Flags for all MathPhysInfo hosts except the proxy
 Host *.dmath.uni-heidelberg.de !apple.dmath.uni-heidelberg.de
     Port 3022
-    ProxyCommand "/usr/bin/tsh" proxy ssh --cluster=MathPhysInfo --proxy=apple.dmath.uni-heidelberg.de %r@%h:%p
+    ProxyCommand "tsh" proxy ssh --cluster=MathPhysInfo --proxy=apple.dmath.uni-heidelberg.de %r@%h:%p
 
 # End generated Teleport configuration
