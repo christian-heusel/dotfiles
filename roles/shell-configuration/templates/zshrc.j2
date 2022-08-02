@@ -95,6 +95,8 @@ alias spack_env='source {{ sdk_path }}/spack/share/spack/setup-env.sh'
 alias signoff='ARCHWEB_USERNAME="gromit" ARCHWEB_PASSWORD=$(gopass show --password websites/www.archlinux.org/gromit) signoff'
 alias gh='GH_TOKEN=$(gopass show --password "misc/github-token") gh'
 {{ 'alias bat=\'batcat\'' if ansible_distribution == 'Debian' }}
+# https://github.com/gravitational/teleport/issues/14657
+alias tsh='TELEPORT_FIDO2=0 tsh'
 
 # color for zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
