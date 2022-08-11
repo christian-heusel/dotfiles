@@ -102,7 +102,7 @@ alias tsh='TELEPORT_FIDO2=0 tsh'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 # export GPG_TTY=$(tty) 
 
-export PATH=$PATH:$HOME/.local/bin:$(go env GOPATH)/bin
+export PATH=$HOME/.local/bin:$(go env GOPATH)/bin:$PATH
 export ANSIBLE_NOCOWS=1
 
 export CHROME_EXECUTABLE=$(command -v google-chrome-stable)
