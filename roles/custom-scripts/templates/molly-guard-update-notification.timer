@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer to check for molly-guard updates
+
+[Timer]
+OnCalendar=weekly
+Persistent=true
+RandomizedDelaySec=12h
+
+[Install]
+WantedBy=timers.target

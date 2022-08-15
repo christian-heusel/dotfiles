@@ -34,4 +34,12 @@
     timed_script:
       unitname: "dotfiles"
       scriptname: "update_and_run.sh"
+
+- name: install the update checker for molly-guard
+  include_tasks: "timed_script.yml"
+  vars:
+    timed_script:
+      unitname: "molly-guard-update-notification"
+      scriptname: "molly-guard-update-notification.sh"
+
 - include_tasks: april_fools.yml
