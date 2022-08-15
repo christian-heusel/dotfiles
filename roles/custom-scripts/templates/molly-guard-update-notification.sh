@@ -17,7 +17,12 @@ set -o nounset                              # Treat unset variables as an error
 aur_version=$(curl --silent https://aur.archlinux.org/rpc/\?v\=5\&type\=search\&arg\=molly-guard | jq ".results[0].Version" | sed "s&\"&&g")
 upstream_version=$(curl --silent https://sources.debian.org/api/src/molly-guard/ | jq ".versions[].version" | sort --reverse --version-sort | head -1 | sed "s&\"&&g")
 
-if [ $(vercmp $aur_version $upstream_version) -ne 0 ]; then
+{% if ansible_os_family == 'Archlinux' %}
+if [ $(vercmp $aur_version $upstream_version) -ne 0 ]
+{% else %}
+if ! command -v dpkg --compare-versions $aur_version lt $upstream_version &> /dev/null
+{% endif %}
+then
     echo $aur_version $upstream_version $(vercmp $aur_version $upstream_version)
     zenity --question --width="370" --height=20  \
         --title "Version Update Notification" \
