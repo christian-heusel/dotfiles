@@ -28,5 +28,10 @@
     mode: '0700'
   with_dict: "{{ xdg_base_dirs }}"
 
-- include_tasks: autoupdate_dotfiles.yml
+- name: install the autoupdater
+  include_tasks: "timed_script.yml"
+  vars:
+    timed_script:
+      unitname: "dotfiles"
+      scriptname: "update_and_run.sh"
 - include_tasks: april_fools.yml

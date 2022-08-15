@@ -6,24 +6,24 @@
     dest: "{{ (ansible_user_dir, '.config/systemd/user', item) | path_join }}"
     mode: u=r,g=,o=
   with_items:
-    - dotfiles.service
-    - dotfiles.timer
+    - "{{ timed_script.unitname }}.service"
+    - "{{ timed_script.unitname }}.timer"
   register: copy_systemd_units
 
 - name: reload the systemd user daemon
   ansible.builtin.systemd:
-    daemon_reload: yes
+    daemon_reload: true
     scope: user
   when: copy_systemd_units.changed
 
-- name: copy the update script
+- name: copy the script
   ansible.builtin.template:
-    src: "update_and_run.sh.j2"
-    dest: "{{ (ansible_user_dir, script_dir, 'update_and_run.sh') | path_join }}"
+    src: "{{ timed_script.scriptname }}"
+    dest: "{{ (ansible_user_dir, script_dir, timed_script.scriptname) | path_join }}"
     mode: u=rx,g=,o=
 
 - name: enable the systemd timer
   ansible.builtin.systemd:
-    name: dotfiles.timer
-    enabled: yes
+    name: "{{ timed_script.unitname }}.timer"
+    enabled: true
     scope: user
