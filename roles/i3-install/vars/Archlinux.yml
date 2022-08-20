@@ -100,8 +100,8 @@ desktop_packages:
   - deepin-community-wallpapers
   - deepin-wallpapers
   - discord
-  - elementary-wallpapers
   - element-desktop
+  - elementary-wallpapers
   - evince
   - file-roller
   - firefox
@@ -117,6 +117,7 @@ desktop_packages:
   - libreoffice-fresh
   - mpv
   - nextcloud-client
+  - noto-fonts-emoji
   - obs-studio
   - owncloud-client
   - pdfpc
