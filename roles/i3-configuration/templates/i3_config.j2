@@ -198,11 +198,13 @@ for_window [class="Firefox"] focus
 for_window [class="Spotify"] focus
 for_window [class="discord"] focus
 
+{% if i3_user_application is defined %}
 # This autostarts all relevant applications
 # In the future this is optimally replaced by systemd-user units ...
 {% for user_application in i3_user_applications %}
 {{ user_application }}
 {% endfor %}
+{% endif %}
 
 ################### SHORTCUTS APPLICATIONS ######################
 #mod1 = ALT
