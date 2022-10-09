@@ -1,6 +1,4 @@
-Include config_mathi
-Include config_mathphys
-Include config_mathphys_teleport_proxy
+Include config_*
 
 Host github.com
     Hostname github.com
