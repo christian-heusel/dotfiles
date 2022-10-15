@@ -1,4 +1,11 @@
 ---
+
+- name: start the pkgstats timer
+  ansible.builtin.systemd:
+    state: started
+    name: "pkgstats.timer"
+  become: yes
+
 - name: set the name of the pacman/aur build user
   set_fact:
     aur_build_user: "pacman_autouser"

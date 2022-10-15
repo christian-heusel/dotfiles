@@ -19,7 +19,7 @@
     - name: i3
       packages: "{{ i3_packages }}"
 
-- include_tasks: "aur.yml"
+- include_tasks: "archlinux.yml"
   when: ansible_facts['distribution'] == "Archlinux"
 
 - name: enable the greeter
