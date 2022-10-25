@@ -5,15 +5,20 @@
   ansible.builtin.file:
     path: "{{ (ansible_user_dir, script_dir) | path_join }}"
     state: directory
-    mode: '0755'
 
 - name: copy all the scripts into the script_dir
-  copy:
+  ansible.posix.synchronize:
     # the trailing slash ensures that all the folder content
     # and not the folder itself is copied!
     src: my_scripts/
     dest: "{{ (ansible_user_dir, script_dir) | path_join }}"
-    mode: u+rx-w
+    perms: no
+
+- name: "set the permissions in {{ script_dir }}"
+  file:
+    dest: "{{ (ansible_user_dir, script_dir) | path_join }}"
+    mode: u=rX,g=rX,o=
+    recurse: yes
 
 - name: create the systemd-user dir
   ansible.builtin.file:
