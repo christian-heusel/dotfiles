@@ -168,6 +168,7 @@ i3_packages:
   - pulseaudio-alsa
   - pulseaudio-zeroconf
   - rofi
+  - rofi-emoji
   - scrot
   - ttf-font-awesome
   - variety

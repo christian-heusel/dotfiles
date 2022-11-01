@@ -116,6 +116,7 @@ bindsym $mod+d exec rofi -lines "4" -fake-transparency -show run
 
 # rofi ssh
 bindsym $mod+c exec rofi -lines "4" -terminal st -fake-transparency -show ssh
+bindsym $mod+Shift+f exec rofi -modi emoji -show emoji -emoji-mode cop
 
 # password selctor
 bindsym $mod+g exec {{ (ansible_user_dir, script_dir, "gopass_selector.sh") | path_join }}
