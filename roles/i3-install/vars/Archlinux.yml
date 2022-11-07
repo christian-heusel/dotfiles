@@ -154,6 +154,7 @@ i3_packages:
   - feh
   - ffmpegthumbnailer
   - gnome-keyring
+  - i3-git
   - i3lock
   - nemo
   - nemo-python
@@ -184,7 +185,6 @@ aur_packages:
   - chkrootkit
   - dcfldd
   - google-chrome
-  - i3-gaps-next-git
   - ly
   - polybar-git
   - rpiplay-git
