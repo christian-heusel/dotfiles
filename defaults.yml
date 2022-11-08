@@ -19,3 +19,4 @@ environment_variables:
 irc_znc_networks:
   - robustirc
   - libera
+  - oftc
