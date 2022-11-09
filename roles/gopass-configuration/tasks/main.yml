@@ -9,8 +9,8 @@
 
 - name: copy the gopass config file to the correct dir
   ansible.builtin.template:
-    src: "gopass_config.yml.j2"
-    dest: "{{ (ansible_user_dir, gopass_config_dir, 'config.yml') | path_join }}"
+    src: "gopass_config.j2"
+    dest: "{{ (ansible_user_dir, gopass_config_dir, 'config') | path_join }}"
     mode: u=r,g=,o=
 
 - name: clone the gopass stores
