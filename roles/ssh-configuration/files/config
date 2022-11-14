@@ -30,9 +30,9 @@ Host cegit.ziti.uni-heidelberg.de
     User git
     AddKeysToAgent yes
 
-Host ziti-cluster
+Host octane
     Hostname ceg-octane.ziti.uni-heidelberg.de
-    User gpucomp05
+    User cheusel
     IdentityFile ~/.ssh/id_rsa
 
 Host hetzner
