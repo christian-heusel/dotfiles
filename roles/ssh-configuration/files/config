@@ -18,6 +18,12 @@ Host gitlab.com
     User git
     AddKeysToAgent yes
 
+Host gitlab.archlinux.org
+    Hostname gitlab.archlinux.org
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User git
+    AddKeysToAgent yes
+
 Host parcomp-git.iwr.uni-heidelberg.de
     Hostname parcomp-git.iwr.uni-heidelberg.de
     IdentityFile ~/.ssh/christian@heusel.eu
