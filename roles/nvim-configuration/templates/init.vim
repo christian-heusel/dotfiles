@@ -86,6 +86,7 @@ let g:ale_fixers = {
 \     'python': ['yapf',],
 \     'cpp': ['clang-format',],
 \     'dart': ['dartfmt',],
+\     'javascript': ['prettier',],
 \}
 
 let g:ale_cpp_clangtidy_extra_options = "-extra-arg=-std=c++20"
