@@ -65,5 +65,11 @@ Host bwfor
     ProxyJump grunthos
 
 Host aur.archlinux.org
-  IdentityFile ~/.ssh/christian@heusel.eu
-  User aur
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User aur
+
+Host eris.noname-ev.de
+    Hostname eris.noname-ev.de
+    User gromit
+    IdentityFile ~/.ssh/nnev-key
+
