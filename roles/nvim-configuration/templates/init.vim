@@ -85,6 +85,7 @@ let g:ale_yaml_yamllint_args = "-c \"" . join(systemlist("git rev-parse --show-t
 let g:ale_fixers = {
 \     'python': ['yapf',],
 \     'cpp': ['clang-format',],
+\     'c': ['clang-format',],
 \     'dart': ['dartfmt',],
 \     'javascript': ['prettier',],
 \}
@@ -92,6 +93,7 @@ let g:ale_fixers = {
 let g:ale_cpp_clangtidy_extra_options = "-extra-arg=-std=c++20"
 let g:ale_linters = {
 \     'cpp': ['clangtidy'],
+\     'c': ['clangtidy'],
 \}
 let g:ale_fix_on_save = 0
 
