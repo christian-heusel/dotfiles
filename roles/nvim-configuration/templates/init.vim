@@ -39,7 +39,6 @@ endif
 :au BufNewFile,BufRead *.pt  set tabstop=2 | set softtabstop=2 | set shiftwidth=2 | set expandtab | set autoindent | set fileformat=unix
 
 autocmd BufWritePost *.rmd exec "call CompileRmd()"
-autocmd BufWritePre * exec "retab"
 autocmd BufWritePre *.tex,*.py %s/\s\+$//e
 autocmd Filetype markdown map <F5> :!pandoc<space><C-r>%<space>-o<space><C-r>%.pdf<Enter><Enter>
 
