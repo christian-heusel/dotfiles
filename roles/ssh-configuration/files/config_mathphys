@@ -1,17 +1,3 @@
-Host xerophyte
-    # Hostname 129.206.27.61
-    Hostname xerophyte.dmath.uni-heidelberg.de
-    IdentityFile ~/.ssh/chris_fachschaft
-    User root
-    ProxyJump root@cherry.dmath.uni-heidelberg.de
-
-Host spinach.dmath.uni-heidelberg.de
-    # Hostname 129.206.27.61
-    Hostname spinach.dmath.uni-heidelberg.de
-    IdentityFile ~/.ssh/chris_fachschaft
-    User root
-    ProxyJump root@cherry.dmath.uni-heidelberg.de
-
 Host mathphys
     Hostname shell.mathphys.stura.uni-heidelberg.de
     User chris
@@ -29,24 +15,24 @@ Host mathphys-nokey
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials yes
 
-Host mathphys.old
-    Hostname fiddlehead.dmath.uni-heidelberg.de
-    User chris
-    Port 22
-    IdentityFile /home/chris/Documents/Fachschaft/root/ssh-keys/chris_fachschaft
+Host cherry.dmath.uni-heidelberg.de
+    Hostname cherry.dmath.uni-heidelberg.de
+    IdentityFile ~/.ssh/chris_fachschaft
+    User root
 
-# Host cherry.dmath.uni-heidelberg.de
-#     HostName cherry.dmath.uni-heidelberg.de
-#     User root
-#     IdentityFile ~/.ssh/chris_fachschaft
-#     AddKeysToAgent yes
+Host dragonfruit.dmath.uni-heidelberg.de
+    Hostname cherry.dmath.uni-heidelberg.de
+    IdentityFile ~/.ssh/chris_fachschaft
+    User root
 
-Host sven
-    Hostname sven.mathphys
-    User pi
-    IdentityFile /home/chris/.ssh/id_rsa
+Host dragonfruit.dmath.uni-heidelberg.de
+    Hostname spinach.dmath.uni-heidelberg.de
+    IdentityFile ~/.ssh/chris_fachschaft
+    User root
+    ProxyJump mathphys
 
-Host sturaslides
-    Hostname openslides.stura.uni-heidelberg.de
-    User chris
-    IdentityFile /home/chris/.ssh/sitzungen.stura.uni-heidelberg.de
+Host xerophyte.dmath.uni-heidelberg.de
+    Hostname xerophyte.dmath.uni-heidelberg.de
+    IdentityFile ~/.ssh/chris_fachschaft
+    User root
+    ProxyJump mathphys
