@@ -159,7 +159,7 @@ let $FZF_DEFAULT_OPTS='--reverse'
 nnoremap <leader>gs :tab G<CR>
 nnoremap <leader>gd :G diff<CR>
 nnoremap <leader>gp :G -c push.default=current push<CR>
-nnoremap <leader>gc :GCheckout<CR>
+nnoremap <leader>gc :GBranches<CR>
 
 " let python_highlight_all =1
 " filetype plugin indent on       " required
