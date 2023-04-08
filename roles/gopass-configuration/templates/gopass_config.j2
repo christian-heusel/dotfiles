@@ -1,6 +1,4 @@
 # THIS FILE IS MANAGED BY ANSIBLE
-[mounts]
-    path = {{ default_store.path }}
 [core]
     safecontent = false
     parsing = true
@@ -8,9 +6,11 @@
     nopager = false
     exportkeys = true
     cliptimeout = 45
-    autosync = true
+    autopush = true
     autoimport = true
     autoclip = true
+[mounts]
+    path = {{ default_store.path }}
 {% for mount in other_mounts %}
 [mounts "{{ mount.name }}"]
     path = {{ mount.path }}
