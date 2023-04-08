@@ -16,5 +16,8 @@
 
 - name: also copy the irc config
   ansible.builtin.template:
-    src: irc.conf
-    dest: "{{ (ansible_user_dir, weechat_config_dir, 'irc.conf') | path_join }}"
+    src: "{{ item }}"
+    dest: "{{ (ansible_user_dir, weechat_config_dir, item) | path_join }}"
+  with_items:
+    - irc.conf
+    - plugins.conf
