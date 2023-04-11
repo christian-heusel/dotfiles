@@ -197,6 +197,7 @@ aur_packages:
   - ttf-go-mono-git
   - ttf-unifont
   - v4l2loopback-dkms-git
+  - weechat-notify-send
   - xcowsay
   - yay
   - zoom
