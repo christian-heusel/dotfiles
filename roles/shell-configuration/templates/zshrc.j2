@@ -94,6 +94,7 @@ alias spack_env='source {{ sdk_path }}/spack/share/spack/setup-env.sh'
 alias signoff='ARCHWEB_USERNAME="gromit" ARCHWEB_PASSWORD=$(gopass show --password websites/www.archlinux.org/gromit) signoff'
 alias gh='GH_TOKEN=$(gopass show --password "misc/github-token") gh'
 alias get_idf='. {{ sdk_path }}/esp-idf/export.sh'
+alias pkgctl='DEVTOOLS_GITLAB_TOKEN="$(gopass show --password archlinux/pkgctl-token)" pkgctl'
 
 # color for zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
