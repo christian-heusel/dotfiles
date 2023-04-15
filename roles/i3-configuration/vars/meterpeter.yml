@@ -33,7 +33,6 @@ i3_user_applications:
   - "exec telegram-desktop"
   - "exec signal-desktop"
   - "exec firefox"
-  - "exec thunderbird"
   - "exec owncloud"
   - "exec nextcloud --background"
   - "exec seafile-applet"
