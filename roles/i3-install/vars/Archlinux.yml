@@ -121,7 +121,6 @@ desktop_packages:
   - nextcloud-client
   - noto-fonts-emoji
   - obs-studio
-  - owncloud-client
   - pdfpc
   - qutebrowser
   - scrcpy

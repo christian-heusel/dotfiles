@@ -52,7 +52,6 @@ i3_user_applications:
   - "exec firefox"
   - "exec thunderbird"
   - "exec --no-startup-id discord --disable-sandbox"
-  - "exec owncloud"
   - "exec nextcloud --background"
   - "exec seafile-applet"
   - "exec element-desktop"
