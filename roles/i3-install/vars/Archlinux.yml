@@ -165,7 +165,6 @@ i3_packages:
   - pasystray
   - pavucontrol
   - picom
-  - polybar
   - pulseaudio-alsa
   - pulseaudio-zeroconf
   - rofi
@@ -186,6 +185,7 @@ aur_packages:
   - google-chrome
   - i3-git
   - ly
+  - polybar-git
   - rpiplay-git
   - screenkey-git
   - seafile-client
