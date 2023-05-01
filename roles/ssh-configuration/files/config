@@ -64,15 +64,6 @@ Host bwfor
     IdentityFile ~/.ssh/id_rsa
     ProxyJump grunthos
 
-Host aur aur.archlinux.org
-    IdentityFile ~/.ssh/christian@heusel.eu
-    Hostname aur.archlinux.org
-    User aur
-
-Host repos.sandbox.archlinux.org
-    IdentityFile ~/.ssh/christian@heusel.eu
-    User gromit
-
 Host eris.noname-ev.de
     Hostname eris.noname-ev.de
     User gromit

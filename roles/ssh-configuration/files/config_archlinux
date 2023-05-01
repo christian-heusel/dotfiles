@@ -1,0 +1,16 @@
+Host aur aur.archlinux.org
+    IdentityFile ~/.ssh/christian@heusel.eu
+    Hostname aur.archlinux.org
+    User aur
+
+Host repos.sandbox.archlinux.org
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User gromit
+
+Host repos.archlinux.org
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User gromit
+
+Host homedir.archlinux.org
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User gromit
