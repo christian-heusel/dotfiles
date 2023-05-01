@@ -85,3 +85,9 @@
     line: "{{ item.key }}\tDEFAULT={{ item.value }}"
   with_dict: "{{ environment_variables }}"
   become: yes
+
+- name: enable yubikey smartcard discovery
+  ansible.builtin.systemd:
+    enabled: yes
+    name: pcscd.service
+  become: yes
