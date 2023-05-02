@@ -89,5 +89,6 @@
 - name: enable yubikey smartcard discovery
   ansible.builtin.systemd:
     enabled: yes
+    state: started
     name: pcscd.service
   become: yes
