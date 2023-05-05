@@ -18,5 +18,5 @@ environment_variables:
   XDG_CURRENT_DESKTOP: i3
 irc_znc_networks:
   - robustirc
-  - libera
   - oftc
+  - libera
