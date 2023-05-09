@@ -24,3 +24,12 @@
     advertisePushOptions = true
 [gc]
     writeCommitGraph = true
+[sendemail]
+; setup for using git send-email; prompts for password
+smtpuser = christian@heusel.eu
+smtpserver = smtp.1und1.de
+smtpencryption = tls
+smtpserverport = 587
+[user]
+    email = christian@heusel.eu
+    name = Christian Heusel
