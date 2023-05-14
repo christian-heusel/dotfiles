@@ -1,6 +1,7 @@
 Host aur aur.archlinux.org
     IdentityFile ~/.ssh/christian@heusel.eu
     Hostname aur.archlinux.org
+    SendEnv AUR_OVERWRITE
     User aur
 
 Host repos.sandbox.archlinux.org
