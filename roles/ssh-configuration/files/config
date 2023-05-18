@@ -69,3 +69,7 @@ Host eris.noname-ev.de
     User gromit
     IdentityFile ~/.ssh/nnev-key
 
+Host lucy.noname-ev.de
+    Hostname lucy.noname-ev.de
+    User gromit
+    IdentityFile ~/.ssh/nnev-key
