@@ -15,3 +15,9 @@ Host repos.archlinux.org
 Host homedir.archlinux.org
     IdentityFile ~/.ssh/christian@heusel.eu
     User gromit
+
+Host gitlab.archlinux.org
+    Hostname gitlab.archlinux.org
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User git
+    AddKeysToAgent yes
