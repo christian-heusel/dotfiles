@@ -21,3 +21,7 @@ Host gitlab.archlinux.org
     IdentityFile ~/.ssh/christian@heusel.eu
     User git
     AddKeysToAgent yes
+
+Host build.archlinux.org
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User gromit
