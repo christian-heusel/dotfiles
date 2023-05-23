@@ -3,9 +3,8 @@
 # Common flags for all teleport.mathphys.info hosts
 Host *.teleport.mathphys.info teleport.mathphys.info
     UserKnownHostsFile "/home/chris/.tsh/known_hosts"
-    IdentityFile "/home/chris/.tsh/keys/teleport.mathphys.info/christian-heusel"
-    CertificateFile "/home/chris/.tsh/keys/teleport.mathphys.info/christian-heusel-ssh/teleport.mathphys.info-cert.pub"
-    PubkeyAcceptedAlgorithms +ssh-rsa-cert-v01@openssh.com
+    IdentityFile "/home/chris/.tsh/keys/teleport.mathphys.info/chris"
+    CertificateFile "/home/chris/.tsh/keys/teleport.mathphys.info/chris-ssh/teleport.mathphys.info-cert.pub"
     HostKeyAlgorithms rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,ssh-rsa-cert-v01@openssh.com
 
 # Flags for all teleport.mathphys.info hosts except the proxy
