@@ -4,9 +4,18 @@ Host aur aur.archlinux.org
     SendEnv AUR_OVERWRITE
     User aur
 
-Host repos.sandbox.archlinux.org
+Host aur.local
     IdentityFile ~/.ssh/christian@heusel.eu
-    User gromit
+    Hostname localhost
+    Port 2222
+    SendEnv AUR_OVERWRITE
+    User aur
+
+Host gitlab.archlinux.org
+    Hostname gitlab.archlinux.org
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User git
+    AddKeysToAgent yes
 
 Host repos.archlinux.org
     IdentityFile ~/.ssh/christian@heusel.eu
@@ -15,12 +24,6 @@ Host repos.archlinux.org
 Host homedir.archlinux.org
     IdentityFile ~/.ssh/christian@heusel.eu
     User gromit
-
-Host gitlab.archlinux.org
-    Hostname gitlab.archlinux.org
-    IdentityFile ~/.ssh/christian@heusel.eu
-    User git
-    AddKeysToAgent yes
 
 Host build.archlinux.org
     IdentityFile ~/.ssh/christian@heusel.eu
