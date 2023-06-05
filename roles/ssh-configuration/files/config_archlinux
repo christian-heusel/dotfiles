@@ -9,6 +9,7 @@ Host aur.local
     Hostname localhost
     Port 2222
     SendEnv AUR_OVERWRITE
+    StrictHostKeyChecking no
     User aur
 
 Host gitlab.archlinux.org
