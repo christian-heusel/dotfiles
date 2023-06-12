@@ -120,11 +120,13 @@ desktop_packages:
   - mpv
   - nextcloud-client
   - noto-fonts-emoji
+  - nsxiv
   - obs-studio
   - pdfpc
   - qutebrowser
   - scrcpy
   - screenfetch
+  - screenkey
   - shutter
   - signal-desktop
   - sxiv
@@ -153,7 +155,9 @@ i3_packages:
   - feh
   - ffmpegthumbnailer
   - gnome-keyring
+  - i3-wm
   - i3lock
+  - ly
   - nemo
   - nemo-python
   - network-manager-applet
@@ -165,6 +169,7 @@ i3_packages:
   - pasystray
   - pavucontrol
   - picom
+  - polybar
   - pulseaudio-alsa
   - pulseaudio-zeroconf
   - rofi
@@ -179,15 +184,13 @@ i3_packages:
   - zenity
 
 aur_packages:
-  - activate-linux-git
+  - activate-linux
   - chkrootkit
   - dcfldd
   - google-chrome
-  - i3-git
-  - ly
-  - polybar-git
+  - google-chrome-beta
+  - google-chrome-dev
   - rpiplay-git
-  - screenkey-git
   - seafile-client
   - siji-git
   - slack-desktop
