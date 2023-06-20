@@ -1,0 +1,6 @@
+[Unit]
+Description=nvchecker service for the AUR packages
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nvchecker-notify -c /home/chris/Documents/shared_projects/aur-packages/packages.toml

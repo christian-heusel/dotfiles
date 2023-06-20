@@ -20,6 +20,7 @@
   ansible.builtin.template:
     src: "{{ timed_script.scriptname }}"
     dest: "{{ (ansible_user_dir, script_dir, timed_script.scriptname) | path_join }}"
+  when: timed_script.scriptname is defined
 
 - name: enable the systemd timer
   ansible.builtin.systemd:

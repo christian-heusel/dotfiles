@@ -40,5 +40,16 @@
       unitname: "dotfiles"
       scriptname: "update_and_run.sh"
 
+- name: install the update checker for the aur
+  include_tasks: "timed_script.yml"
+  vars:
+    timed_script:
+      unitname: "aur-update-notification"
+
+- name: install the update checker for the normal packages
+  include_tasks: "timed_script.yml"
+  vars:
+    timed_script:
+      unitname: "archlinux-package-update-notification"
 
 - include_tasks: april_fools.yml

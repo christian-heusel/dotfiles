@@ -1,0 +1,6 @@
+[Unit]
+Description=nvchecker for the archlinux repo packages
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/nvchecker-notify -c /home/chris/Documents/shared_projects/packages/packages.toml

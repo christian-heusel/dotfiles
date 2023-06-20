@@ -1,0 +1,10 @@
+[Unit]
+Description=check for new versions
+After=graphical-session.target
+
+[Timer]
+OnCalendar=*-*-* *:00:00
+RandomizedDelaySec=600
+
+[Install]
+WantedBy=timers.target
