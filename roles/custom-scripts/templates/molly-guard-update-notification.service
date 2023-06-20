@@ -1,8 +1,0 @@
-[Unit]
-Description=Look if there is an update for molly-guard
-Wants=network-online.target
-After=network-online.target nss-lookup.target
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash {{ (ansible_user_dir, script_dir, "molly-guard-update-notification.sh") | path_join }}
