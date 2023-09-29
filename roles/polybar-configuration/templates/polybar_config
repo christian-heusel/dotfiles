@@ -45,9 +45,14 @@ module-margin-right = 2
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = WunconSiji:pixelsize=10;1
-font-3 = "Font Awesome 5 Free:style=Regular:pixelsize=10;1"
-font-4 = "Font Awesome 5 Free:style=Solid:pixelsize=10;1"
-font-5 = "Font Awesome 5 Brands:pixelsize=10;1"
+font-3 = "Font Awesome 6 Free:style=Regular:pixelsize=10;1"
+font-4 = "Font Awesome 6 Free:style=Solid:pixelsize=10;1"
+font-5 = "Font Awesome 6 Brands:pixelsize=10;1"
+# debian
+font-6 = "FontAwesome:style=Regular:pixelsize=10;1"
+font-7 = "FontAwesome:style=Solid:pixelsize=10;1"
+font-8 = "FontAwesome:pixelsize=10;1"
+font-9 = "Unifont:style=Regular"
 
 modules-left = i3 spotify
 modules-center =
