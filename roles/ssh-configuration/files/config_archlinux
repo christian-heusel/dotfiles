@@ -1,3 +1,6 @@
+Host *.archlinux.org
+    IdentityFile ~/.ssh/christian@heusel.eu
+
 Host aur aur.archlinux.org
     IdentityFile ~/.ssh/christian@heusel.eu
     Hostname aur.archlinux.org
