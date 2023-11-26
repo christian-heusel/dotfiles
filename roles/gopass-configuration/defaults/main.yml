@@ -11,3 +11,5 @@ other_mounts:
   - name: "heuselfamily"
     path: "/home/chris/.password-store-heuselfamily"
     git_url: "git@git.heusel.eu:Family/gopass_family.git"
+  - name: "arch-secrets"
+    path: "/home/chris/.password-store-archlinux"

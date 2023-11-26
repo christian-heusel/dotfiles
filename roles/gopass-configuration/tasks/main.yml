@@ -19,4 +19,5 @@
     dest: "{{ item.path }}"
     update: false
     accept_hostkey: true
+  when: item.git_url is defined
   with_items: "{{ [default_store] + other_mounts }}"
