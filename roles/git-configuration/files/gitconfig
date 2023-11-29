@@ -38,4 +38,17 @@ smtpserverport = 587
     reapply = "!f() { local head=$(git rev-parse HEAD) && local base=$(git rev-parse \"${2:-HEAD}\") && git reset --hard \"$1\" && git cherry-pick \"$base^..$head\"; }; f"
     jedi = push --force-with-lease
     grepa = "!f() { git rev-list --all | xargs git grep -I --line-number \"$@\"; }; f"
-    grab = "!f() { set -euo pipefail; url=$(git remote get-url origin); git fetch \"${url/:*}:$1/${url//*\\/}\" \"$2\"; git switch --create \"$2\" FETCH_HEAD; git branch | --set-upstream-to=${3:-origin/$(git default-branch)};  }; f"
+    grab      = "!f() { set -euo pipefail; \
+     url=$(git remote get-url origin); \
+     namespace=\"$1\"; \
+     fetch_url=\"${url/:*}:${namespace}/${url//*\\/}\"; \
+     ref=\"${2:-$(git select-remote --heads \"${fetch_url}\" | sed 's|refs/heads/||')}\"; \
+     git fetch \"${fetch_url}\" \"${ref}\"; \
+     git switch --create \"${namespace}/${ref}\" FETCH_HEAD; }; f"
+    grab-push = "!f() { set -euo pipefail; \
+     url=$(git remote get-url origin); \
+     branch=\"$(git branch --show-current)\"; \
+     namespace=\"${branch%%/*}\"; \
+     head=\"${branch#*/}\"; \
+     push_url=\"${url/:*}:${namespace}/${url//*\\/}\"; \
+     git push --force \"${push_url}\" \"${branch}:${head}\"; }; f"
