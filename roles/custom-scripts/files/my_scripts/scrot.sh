@@ -6,5 +6,5 @@ echo "$save_path$name"
 scrot -q 100 ~/$name && \
 mv ~/$name $save_path$name && \
 xclip -selection clipboard -t image/png -i "$combined" && \
-zenity --info --width="280" --height=20 --title "Screenshot" --timeout=1 --text "Your screenshot has been Saved in \n $save_path !" &>/dev/null && \
+GTK_THEME="Arc:dark" zenity --info --width="280" --height=20 --title "Screenshot" --timeout=1 --text "Your screenshot has been Saved in \n $save_path !" &>/dev/null && \
 exit 0

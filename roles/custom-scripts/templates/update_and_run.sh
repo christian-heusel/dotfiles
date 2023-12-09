@@ -24,8 +24,8 @@ check_error () {
         echo OK
     else
         error_text="There was an error executing \"${@:2}\""
-        echo $error_text
-        zenity --error --width="500" --height=20 --timeout=5 \
+        echo "$error_text"
+        GTK_THEME="Arc:dark" zenity --error --width="500" --height=20 --timeout=5 \
                --text "$error_text" --title "$0"
         exit 1
     fi
