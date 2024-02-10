@@ -33,6 +33,8 @@ smtpserverport = 587
 [user]
     email = christian@heusel.eu
     name = Christian Heusel
+[pretty]
+    fixes = Fixes: %h (\"%s\")
 [alias]
     # git reapply origin/git-packages
     reapply = "!f() { local head=$(git rev-parse HEAD) && local base=$(git rev-parse \"${2:-HEAD}\") && git reset --hard \"$1\" && git cherry-pick \"$base^..$head\"; }; f"
