@@ -30,6 +30,12 @@ Host parcomp-git.iwr.uni-heidelberg.de
     User git
     AddKeysToAgent yes
 
+Host gitlab.gnome.org
+    Hostname gitlab.gnome.org
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User git
+    AddKeysToAgent yes
+
 Host cegit.ziti.uni-heidelberg.de
     Hostname cegit.ziti.uni-heidelberg.de
     IdentityFile ~/.ssh/cheusel@cegit.ziti.uni-heidelberg.de
