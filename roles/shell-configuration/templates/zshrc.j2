@@ -4,6 +4,9 @@
 # Path to your oh-my-zsh installation.
   export ZSH=/home/chris/.oh-my-zsh
 
+# https://github.com/ohmyzsh/ohmyzsh/issues/12328
+zstyle ':omz:alpha:lib:git' async-prompt no
+
 zstyle :omz:plugins:ssh-agent identities id_rsa
 # zstyle :omz:plugins:ssh-agent identities
 zstyle :omz:plugins:ssh-agent lifetime 3h
