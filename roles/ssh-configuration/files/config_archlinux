@@ -1,6 +1,10 @@
 Host *.archlinux.org
     IdentityFile ~/.ssh/christian@heusel.eu
 
+Host *.pkgbuild.com
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User root
+
 Host aur aur.archlinux.org
     IdentityFile ~/.ssh/christian@heusel.eu
     Hostname aur.archlinux.org
@@ -21,14 +25,8 @@ Host gitlab.archlinux.org
     User git
     AddKeysToAgent yes
 
-Host repos.archlinux.org
-    IdentityFile ~/.ssh/christian@heusel.eu
+Host repos.archlinux.org homedir.archlinux.org build.archlinux.org
     User gromit
 
-Host homedir.archlinux.org
-    IdentityFile ~/.ssh/christian@heusel.eu
-    User gromit
-
-Host build.archlinux.org
-    IdentityFile ~/.ssh/christian@heusel.eu
-    User gromit
+Host *.archlinux.org
+    User root
