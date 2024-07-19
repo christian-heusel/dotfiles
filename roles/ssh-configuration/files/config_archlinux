@@ -1,4 +1,4 @@
-Host *.archlinux.org
+Host *.archlinux.org archlinux.org
     IdentityFile ~/.ssh/christian@heusel.eu
 
 Host *.pkgbuild.com
@@ -28,5 +28,5 @@ Host gitlab.archlinux.org
 Host repos.archlinux.org homedir.archlinux.org build.archlinux.org
     User gromit
 
-Host *.archlinux.org
+Host *.archlinux.org archlinux.org
     User root
