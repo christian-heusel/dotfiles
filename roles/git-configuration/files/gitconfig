@@ -54,3 +54,5 @@ smtpserverport = 587
      head=\"${branch#*/}\"; \
      push_url=\"${url/:*}:${namespace}/${url//*\\/}\"; \
      git push --force \"${push_url}\" \"${branch}:${head}\"; }; f"
+[merge]
+    conflictstyle = diff3
