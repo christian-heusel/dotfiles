@@ -2,7 +2,7 @@
 [user]
     name = Christian Heusel
     email = christian@heusel.eu
-    signkey = christian@heusel.eu
+    signingkey = christian@heusel.eu
 [core]
     editor = nvim
     excludesFile = ~/.gitignore
