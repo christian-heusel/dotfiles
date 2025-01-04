@@ -98,6 +98,8 @@ alias signoff='ARCHWEB_USERNAME="gromit" ARCHWEB_PASSWORD=$(gopass show --passwo
 alias gh='GH_TOKEN=$(gopass show --password "misc/github-token") gh'
 alias get_idf='. {{ sdk_path }}/esp-idf/export.sh'
 alias pkgctl='DEVTOOLS_GITLAB_TOKEN="$(gopass show --password archlinux/pkgctl-token)" pkgctl'
+alias glab='GITLAB_TOKEN="$(gopass show --password archlinux/glab-token)" glab'
+
 
 # color for zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
