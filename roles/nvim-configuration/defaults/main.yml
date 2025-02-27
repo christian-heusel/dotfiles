@@ -13,7 +13,6 @@ nvim_plugins:
   - name: 'NLKNguyen/papercolor-theme'
   - name: 'KeitaNakamura/neodark.vim'
   - name: 'scrooloose/nerdtree'
-  - name: 'ctrlpvim/ctrlp.vim'
   - name: 'vim-airline/vim-airline'
   - name: 'vim-airline/vim-airline-themes'
   - name: 'SirVer/ultisnips'
@@ -41,3 +40,5 @@ nvim_plugins:
   - name: 'https://github.com/triglav/vim-visual-increment.git'
   - name: 'Yggdroot/indentLine'
   - name: 'hashivim/vim-terraform'
+  - name: 'nvim-lua/plenary.nvim'
+  - name: 'nvim-telescope/telescope.nvim'
