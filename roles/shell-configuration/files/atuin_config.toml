@@ -1,1 +1,4 @@
 sync_address = "https://christian.heusel.eu/atuin/"
+enter_accept = false
+update_check = false
+inline_height = 14
