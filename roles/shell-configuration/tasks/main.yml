@@ -53,3 +53,15 @@
     src: "gdbinit"
     dest: "{{ (ansible_user_dir, xdg_base_dirs.XDG_CONFIG_HOME, 'gdb', 'gdbinit') | path_join }}"
     mode: u+r-wx
+
+- name: create the atuin config dir
+  ansible.builtin.file:
+    path: "{{ (ansible_user_dir, xdg_base_dirs.XDG_CONFIG_HOME, 'atuin') | path_join }}"
+    state: directory
+    mode: '0755'
+
+- name: copy the atuin config file to the correct dir
+  ansible.builtin.copy:
+    src: "atuin_config.toml"
+    dest: "{{ (ansible_user_dir, xdg_base_dirs.XDG_CONFIG_HOME, 'atuin', 'config.toml') | path_join }}"
+    mode: u+r-wx

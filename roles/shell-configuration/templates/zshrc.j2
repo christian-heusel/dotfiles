@@ -24,7 +24,6 @@ ZSH_THEME="{{ zsh_theme }}"
 plugins=(
   git
   ssh-agent
-  fzf
 {% for plugin in extra_plugins %}
   {{ plugin.name }}
 {% endfor %}
@@ -109,3 +108,4 @@ export PATH=$HOME/.local/bin:$(go env GOPATH)/bin:{{ sdk_path }}/flutter-sdk/bin
 export ANSIBLE_NOCOWS=1
 
 export CHROME_EXECUTABLE=$(command -v google-chrome-stable)
+eval "$(atuin init zsh)"
