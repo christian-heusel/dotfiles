@@ -186,7 +186,6 @@ i3_packages:
 
 aur_packages:
   - activate-linux
-  - chkrootkit
   - dcfldd
   - google-chrome
   - google-chrome-beta
@@ -199,8 +198,6 @@ aur_packages:
   - teleport-bin
   - ttf-go-mono-git
   - ttf-unifont
-  - v4l2loopback-dkms-git
   - weechat-notify-send
   - xcowsay
-  - yay
   - zoom
