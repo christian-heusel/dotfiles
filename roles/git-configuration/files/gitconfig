@@ -56,3 +56,5 @@ smtpserverport = 587
      git push --force \"${push_url}\" \"${branch}:${head}\"; }; f"
 [merge]
     conflictstyle = diff3
+[rebase]
+    autoStash = true
