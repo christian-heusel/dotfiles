@@ -58,3 +58,6 @@ smtpserverport = 587
     conflictstyle = diff3
 [rebase]
     autoStash = true
+[fetch]
+    prune = true
+    all = true
