@@ -79,3 +79,10 @@ Host lucy.noname-ev.de
     Hostname lucy.noname-ev.de
     User gromit
     IdentityFile ~/.ssh/nnev-key
+
+Host ssh.dev.azure.com
+    Hostname ssh.dev.azure.com
+    IdentityFile ~/.ssh/christian@heusel.eu
+    User git
+    AddKeysToAgent yes
+
