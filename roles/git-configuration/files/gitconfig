@@ -61,3 +61,5 @@ smtpserverport = 587
 [fetch]
     prune = true
     all = true
+[branch]
+    sort = committerdate
