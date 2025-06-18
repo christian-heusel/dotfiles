@@ -30,7 +30,7 @@ i3_screen_config: |
   #smart_borders on
 
 i3_user_applications:
-  - "exec telegram-desktop"
+  - "exec Telegram"
   - "exec signal-desktop"
   - "exec firefox"
   - "exec nextcloud --background"

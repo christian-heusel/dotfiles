@@ -47,7 +47,7 @@ i3_screen_config: |
   gaps outer 2
 
 i3_user_applications:
-  - "exec telegram-desktop"
+  - "exec Telegram"
   - "exec signal-desktop"
   - "exec firefox"
   - "exec thunderbird"
