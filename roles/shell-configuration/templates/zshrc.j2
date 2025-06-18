@@ -104,7 +104,7 @@ alias glab='GITLAB_TOKEN="$(gopass show --password archlinux/glab-token)" glab'
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=4'
 # export GPG_TTY=$(tty) 
 
-export PATH=$HOME/.local/bin:$(go env GOPATH)/bin:{{ sdk_path }}/flutter-sdk/bin:$PATH
+export PATH="$HOME/.cargo/bin/:$HOME/.local/bin:$(go env GOPATH)/bin:{{ sdk_path }}/flutter-sdk/bin:$PATH"
 export ANSIBLE_NOCOWS=1
 
 export CHROME_EXECUTABLE=$(command -v google-chrome-stable)
