@@ -121,6 +121,7 @@ bindsym $mod+Shift+f exec rofi -modi emoji -show emoji -emoji-mode cop
 # password selctor
 bindsym $mod+g exec {{ (ansible_user_dir, script_dir, "gopass_selector.sh") | path_join }}
 bindsym $mod+Shift+g exec {{ (ansible_user_dir, script_dir, "gopass_qr.sh") | path_join }}
+bindsym Mod1+Shift+g exec {{ (ansible_user_dir, script_dir, "gopass_type.sh") | path_join }}
 
 ################### DUAL SCREEN ######################
 
