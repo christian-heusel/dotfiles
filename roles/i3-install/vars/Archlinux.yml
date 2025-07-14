@@ -81,6 +81,7 @@ base_packages:
   - sudo
   - tmux
   - tree
+  - ttf-input
   - unp
   - unrar
   - vpnc
@@ -196,7 +197,6 @@ aur_packages:
   - slack-desktop
   - spotify
   - teleport-bin
-  - ttf-go-mono-git
   - ttf-unifont
   - weechat-notify-send
   - xcowsay
