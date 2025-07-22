@@ -4,4 +4,4 @@
 - name: reload the i3 settings
   command: i3-msg "reload"
   listen: i3_reload
-  when: lookup('env', 'DISPLAY', default=false)
+  when: lookup('env', 'DISPLAY') | length > 0
