@@ -47,6 +47,11 @@ Host octane
     User cheusel
     IdentityFile ~/.ssh/id_rsa
 
+Host hetzner-arm
+    Hostname 91.99.144.25
+    User root
+    IdentityFile ~/.ssh/christian@heusel.eu
+
 Host hetzner
     Hostname christian.heusel.eu
     User root
