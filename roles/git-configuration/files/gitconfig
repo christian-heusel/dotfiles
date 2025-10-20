@@ -63,3 +63,5 @@ smtpserverport = 587
     all = true
 [branch]
     sort = committerdate
+[rerere]
+    enabled = true
