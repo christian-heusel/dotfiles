@@ -54,6 +54,7 @@ smtpserverport = 587
      head=\"${branch#*/}\"; \
      push_url=\"${url/:*}:${namespace}/${url//*\\/}\"; \
      git push --force \"${push_url}\" \"${branch}:${head}\"; }; f"
+    checkout-latest-next = "!f() { git checkout $(git tag --list --sort=taggerdate | grep next | tail -1); };"
 [merge]
     conflictstyle = diff3
 [rebase]
@@ -65,3 +66,4 @@ smtpserverport = 587
     sort = committerdate
 [rerere]
     enabled = true
+    autoupdate = true
