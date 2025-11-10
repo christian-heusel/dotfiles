@@ -55,6 +55,10 @@ smtpserverport = 587
      push_url=\"${url/:*}:${namespace}/${url//*\\/}\"; \
      git push --force \"${push_url}\" \"${branch}:${head}\"; }; f"
     checkout-latest-next = "!f() { git checkout $(git tag --list --sort=taggerdate | grep next | tail -1); };"
+    # Difftastic aliases, so `git dlog` is `git log` with difftastic and so on.
+    dlog = -c diff.external=difft log --ext-diff
+    dshow = -c diff.external=difft show --ext-diff
+    ddiff = -c diff.external=difft diff
 [merge]
     conflictstyle = diff3
 [rebase]
