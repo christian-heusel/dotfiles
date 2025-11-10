@@ -10,7 +10,7 @@
       with_first_found:
         - files:
             # allows for specific configs per host
-            - "{{ ansible_hostname }}.yml"
+            - "{{ ansible_facts['hostname'] }}.yml"
 
     - name: include the default vars
       include_vars: "defaults.yml"
