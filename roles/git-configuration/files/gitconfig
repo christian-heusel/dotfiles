@@ -18,6 +18,8 @@
     rebase = true
 [push]
     default = current
+    # Automatically set origin as the remote for current branch
+    autoSetupRemote = true
 [init]
     defaultBranch = main
 [receive]
