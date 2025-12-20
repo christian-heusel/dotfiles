@@ -41,6 +41,7 @@ endif
 autocmd BufWritePost *.rmd exec "call CompileRmd()"
 autocmd BufWritePre *.tex,*.py %s/\s\+$//e
 autocmd Filetype markdown map <F5> :!pandoc<space><C-r>%<space>-o<space><C-r>%.pdf<Enter><Enter>
+autocmd FileType gitcommit setlocal spell
 
 " buffer movement / handling
 nnoremap <C-J> <C-W><C-J>
