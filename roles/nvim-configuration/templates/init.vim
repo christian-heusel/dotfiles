@@ -42,6 +42,7 @@ autocmd BufWritePost *.rmd exec "call CompileRmd()"
 autocmd BufWritePre *.tex,*.py %s/\s\+$//e
 autocmd Filetype markdown map <F5> :!pandoc<space><C-r>%<space>-o<space><C-r>%.pdf<Enter><Enter>
 autocmd FileType gitcommit setlocal spell
+autocmd FileType terraform let b:ale_fix_on_save = 1
 
 " buffer movement / handling
 nnoremap <C-J> <C-W><C-J>
@@ -88,6 +89,7 @@ let g:ale_fixers = {
 \     'c': ['clang-format',],
 \     'dart': ['dartfmt',],
 \     'javascript': ['prettier',],
+\     'terraform': ['terraform',],
 \}
 
 let g:ale_cpp_clangtidy_extra_options = "-extra-arg=-std=c++20"
