@@ -41,7 +41,7 @@ endif
 autocmd BufWritePost *.rmd exec "call CompileRmd()"
 autocmd BufWritePre *.tex,*.py %s/\s\+$//e
 autocmd Filetype markdown map <F5> :!pandoc<space><C-r>%<space>-o<space><C-r>%.pdf<Enter><Enter>
-autocmd FileType gitcommit setlocal spell
+autocmd FileType gitcommit,markdown setlocal spell
 autocmd FileType terraform let b:ale_fix_on_save = 1
 
 " buffer movement / handling
