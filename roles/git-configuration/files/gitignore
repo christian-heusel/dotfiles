@@ -22,3 +22,4 @@ Session.vim
 **/*.vrb
 **/.vscode
 **/*.orig
+**/*.merge_file*
